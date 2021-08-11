@@ -1,41 +1,74 @@
-import React from 'react'
-import styled from 'styled-components'
-import logo from '../assets/logo.svg'
-import { FaBars } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import { links } from '../utils/constants'
-import CartButtons from './CartButtons'
-import { useProductsContext } from '../context/products_context'
-import { useUserContext } from '../context/user_context'
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { AiOutlineMenu } from "react-icons/ai";
+
+import { links } from "../../Utils/constants";
+import { UserButtons } from "../Navigation";
 
 const Nav = () => {
-  return <h4>navbar</h4>
-}
+  return (
+    <NavContainer>
+      <div className="nav-center">
+        <div className="nav-header">
+          <Link to="/">
+            <h1>
+              Art <span>&</span> Store
+            </h1>
+          </Link>
+          <button className="nav-toggle" type="button">
+            <AiOutlineMenu></AiOutlineMenu>
+          </button>
+        </div>
+        <ul className="nav-links">
+          {links.map((singleLink) => {
+            const { id, name, url } = singleLink;
+            return (
+              <li key={id}>
+                <Link to={url}>{name}</Link>
+              </li>
+            );
+          })}
+        </ul>
+        <UserButtons></UserButtons>
+      </div>
+    </NavContainer>
+  );
+};
 
 const NavContainer = styled.nav`
-  height: 5rem;
+  height: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  background: var(--ColorBlack);
+  color: var(--ColorWhite);
   .nav-center {
-    width: 90vw;
+    width: 87%;
     margin: 0 auto;
-    max-width: var(--max-width);
+    max-width: var(--WidthMax);
   }
   .nav-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    img {
-      width: 175px;
-      margin-left: -15px;
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 1px;
+      font-family: var(--FontWork);
+      font-weight: 200;
+      span {
+        font-size: 2.5rem;
+        margin: 0rem -0.3rem;
+        color: crimson;
+        font-family: var(--FontLora);
+      }
     }
   }
   .nav-toggle {
     background: transparent;
     border: transparent;
-    color: var(--clr-primary-5);
+    color: var(--ColorWhite);
     cursor: pointer;
     svg {
       font-size: 2rem;
@@ -44,10 +77,10 @@ const NavContainer = styled.nav`
   .nav-links {
     display: none;
   }
-  .cart-btn-wrapper {
+  .userBtnsContainer {
     display: none;
   }
-  @media (min-width: 992px) {
+  @media (min-width: 1150px) {
     .nav-toggle {
       display: none;
     }
@@ -63,20 +96,26 @@ const NavContainer = styled.nav`
         margin: 0 0.5rem;
       }
       a {
-        color: var(--clr-grey-3);
+        color: var(--ColorSocialIcons);
+        font-family: var(--FontWork);
         font-size: 1rem;
         text-transform: capitalize;
-        letter-spacing: var(--spacing);
+        letter-spacing: 0.5px;
         padding: 0.5rem;
+        border-bottom: 1px solid transparent;
+        transition: var(--MainTransition);
+        opacity: 0.7;
         &:hover {
-          border-bottom: 2px solid var(--clr-primary-7);
+          border-bottom: 1px solid var(--ColorWhite);
+          color: var(--ColorWhite);
+          opacity: 1;
         }
       }
     }
-    .cart-btn-wrapper {
+    .userBtnsContainer {
       display: grid;
     }
   }
-`
+`;
 
-export default Nav
+export default Nav;

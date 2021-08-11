@@ -1,13 +1,60 @@
 /* --------------------------------------------------- */
-/* --------------------- Globals -------------------- */
+/* -------------------- Global CSS ------------------- */
 /* --------------------------------------------------- */
 
-* {
+/* ======================================================================== */
+/* 1. Fonts */
+/* ======================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@100;200;300;400;600;700&display=swap");
+
+/* ======================================================================== */
+/* 2. CSS */
+/* ======================================================================== */
+
+:root {
+  /* Colors */
+  --ColorBlack: #000000;
+  --ColorWhite: #ffffff;
+  --ColorBlack-1: #030303;
+  --ColorBlack-85: rgba(3, 3, 3, 0.85);
+  --ColorBlack-7: rgba(3, 3, 3, 0.7);
+  --ColorBlack-5: rgba(3, 3, 3, 0.5);
+  --ColorBlack-35: rgba(3, 3, 3, 0.35);
+  --ColorBlack-2: rgba(3, 3, 3, 0.2);
+  --ColorBlackHover: #0c0c0c;
+  --ColorFooterDivider: #505152;
+  --ColorFooterGrey: #d6d6d6;
+  --ColorFooterWhite: #dddddd;
+  --ColorSocialIcons: #bebdbd;
+  --ColorSemiCrimson: rgb(255, 24, 70);
+  /* Fonts */
+  --FontLora: "Lora", Georgia, serif;
+  --FontBebas: "Bebas Neue", Arial, Helvetica, sans-serif;
+  --FontWork: "Work Sans", Arial, Helvetica, sans-serif;
+  /* Utils */
+  --MainTransition: all 0.3s linear;
+  --TransitionFast: all 0.24s linear;
+  --ShadowLight: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --ShadowDark: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --WidthMax: 1350px;
+  --WidthFixed: 620px;
+}
+*,
+::after,
+::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* ======================================================================== */
-/* 1.        */
-/* ======================================================================== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style-type: none;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--ColorFooterDivider);
+}
