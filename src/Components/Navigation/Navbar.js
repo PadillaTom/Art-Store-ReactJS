@@ -5,18 +5,18 @@ import { AiOutlineMenu } from "react-icons/ai";
 
 import { links } from "../../Utils/constants";
 import { UserButtons } from "../Navigation";
+import { Logotype } from "../Logotype";
+
+import { useProductsContext } from "../../Context/products_context";
 
 const Nav = () => {
+  const { openSidebar } = useProductsContext();
   return (
     <NavContainer>
       <div className="nav-center">
         <div className="nav-header">
-          <Link to="/">
-            <h1>
-              Art <span>&</span> Store
-            </h1>
-          </Link>
-          <button className="nav-toggle" type="button">
+          <Logotype></Logotype>
+          <button className="nav-toggle" type="button" onClick={openSidebar}>
             <AiOutlineMenu></AiOutlineMenu>
           </button>
         </div>
@@ -41,8 +41,8 @@ const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--ColorBlack);
-  color: var(--ColorWhite);
+  background: var(--ColorWhite);
+  color: var(--ColorBlack);
   .nav-center {
     width: 87%;
     margin: 0 auto;
@@ -52,23 +52,11 @@ const NavContainer = styled.nav`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    h1 {
-      font-size: 2rem;
-      letter-spacing: 1px;
-      font-family: var(--FontWork);
-      font-weight: 200;
-      span {
-        font-size: 2.5rem;
-        margin: 0rem -0.3rem;
-        color: crimson;
-        font-family: var(--FontLora);
-      }
-    }
   }
   .nav-toggle {
     background: transparent;
     border: transparent;
-    color: var(--ColorWhite);
+    color: var(--ColorBlack);
     cursor: pointer;
     svg {
       font-size: 2rem;
@@ -96,7 +84,7 @@ const NavContainer = styled.nav`
         margin: 0 0.5rem;
       }
       a {
-        color: var(--ColorSocialIcons);
+        color: var(--ColorBlack-85);
         font-family: var(--FontWork);
         font-size: 1rem;
         text-transform: capitalize;
@@ -106,8 +94,8 @@ const NavContainer = styled.nav`
         transition: var(--MainTransition);
         opacity: 0.7;
         &:hover {
-          border-bottom: 1px solid var(--ColorWhite);
-          color: var(--ColorWhite);
+          border-bottom: 1px solid var(--ColorBlack);
+          color: var(--ColorBlack);
           opacity: 1;
         }
       }

@@ -1,12 +1,15 @@
 import React from "react";
-import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
+
+import { useProductsContext } from "../../Context/products_context";
 
 const UserButtons = () => {
+  const { closeSidebar } = useProductsContext();
   return (
     <UserBtns className="userBtnsContainer">
-      <Link to="/cart" className="cart-btn">
+      <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
         Cart
         <span className="cart-container">
           <FaShoppingCart></FaShoppingCart>
@@ -27,14 +30,14 @@ const UserBtns = styled.div`
   width: 14rem;
 
   .cart-btn {
-    color: var(--ColorWhite);
+    color: var(--FontColorGrey);
     font-family: var(--FontWork);
     font-size: 1.3rem;
     display: flex;
     align-items: center;
     transition: var(--TransitionFast);
     &:hover {
-      color: crimson;
+      color: var(--ColorBlack);
       .cart-value {
         background: var(--ColorSemiCrimson);
         color: white;
@@ -54,7 +57,7 @@ const UserBtns = styled.div`
     position: absolute;
     top: -10px;
     right: -16px;
-    background: var(--ColorWhite);
+    background: var(--ColorSemiCrimson);
     width: 16px;
     height: 16px;
     display: flex;
@@ -62,7 +65,7 @@ const UserBtns = styled.div`
     justify-content: center;
     border-radius: 50%;
     font-size: 0.7rem;
-    color: var(--ColorBlack);
+    color: var(--ColorWhite);
     padding: 12px;
     font-weight: 600;
     transition: var(--TransitionFast);
@@ -73,7 +76,7 @@ const UserBtns = styled.div`
     background: transparent;
     border-color: transparent;
     cursor: pointer;
-    color: var(--ColorWhite);
+    color: var(--FontColorGrey);
     font-family: var(--FontWork);
     font-size: 1.3rem;
     svg {
@@ -82,7 +85,7 @@ const UserBtns = styled.div`
     }
     transition: var(--TransitionFast);
     &:hover {
-      color: var(--ColorSemiCrimson);
+      color: var(--ColorBlack);
     }
   }
 `;

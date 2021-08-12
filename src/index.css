@@ -26,12 +26,15 @@
   --ColorFooterDivider: #505152;
   --ColorFooterGrey: #d6d6d6;
   --ColorFooterWhite: #dddddd;
+  --ColorFooterWhiteOP: #f8f8f8c9;
   --ColorSocialIcons: #bebdbd;
   --ColorSemiCrimson: rgb(255, 24, 70);
   /* Fonts */
   --FontLora: "Lora", Georgia, serif;
   --FontBebas: "Bebas Neue", Arial, Helvetica, sans-serif;
   --FontWork: "Work Sans", Arial, Helvetica, sans-serif;
+  --FontColorDark: #181b20;
+  --FontColorGrey: #656a70;
   /* Utils */
   --MainTransition: all 0.3s linear;
   --TransitionFast: all 0.24s linear;
