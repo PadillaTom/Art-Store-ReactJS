@@ -37,7 +37,7 @@ const Nav = () => {
 };
 
 const NavContainer = styled.nav`
-  height: 10rem;
+  height: 6rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,6 +69,7 @@ const NavContainer = styled.nav`
     display: none;
   }
   @media (min-width: 1150px) {
+    height: 10rem;
     .nav-toggle {
       display: none;
     }
