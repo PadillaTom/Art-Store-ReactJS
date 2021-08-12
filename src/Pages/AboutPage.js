@@ -28,6 +28,8 @@ const AboutPage = () => {
   if (width >= 1150) {
     isDesk = true;
   }
+
+  // MAIN:
   return (
     <AboutContainer
       className={isDesk ? "page-height100-desk" : ".page-height100-mobile"}
@@ -58,7 +60,7 @@ const AboutContainer = styled.section`
   img {
     width: 100%;
     display: block;
-    border-radius: var(--radius);
+    border-radius: 0.5rem;
     height: 500px;
     object-fit: cover;
   }
