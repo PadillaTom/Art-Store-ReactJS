@@ -70,10 +70,12 @@ const NavContainer = styled.nav`
   }
   @media (min-width: 1150px) {
     height: 10rem;
+
     .nav-toggle {
       display: none;
     }
     .nav-center {
+      width: 100%;
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;
