@@ -1,18 +1,49 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Contact = () => {
-  return <h4>contact section</h4>
-}
-const Wrapper = styled.section`
+  return (
+    <ContactContainer>
+      <div className="section-center">
+        <h3>Join Our Newsletter</h3>
+        <div className="content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure aut
+            quod placeat fugit excepturi libero molestiae aperiam, fuga debitis
+            in porro eos voluptatum hic numquam et nisi maxime beatae illum.
+            Corrupti quisquam molestiae quae dolores!
+          </p>
+          <form className="contact-form">
+            <input
+              type="email"
+              className="form-input"
+              placeholder="enter e-mail"
+            />
+            <button className="submit-btn" type="submit">
+              Suscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </ContactContainer>
+  );
+};
+const ContactContainer = styled.section`
   padding: 5rem 0;
+  border-bottom: 1px solid var(--ColorFooterDivider);
   h3 {
     text-transform: none;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 300;
   }
   p {
     line-height: 2;
     max-width: 45em;
-    color: var(--clr-grey-5);
+    font-family: var(--FontWork);
+    font-weight: 300;
+    color: var(--ColorBlack-7);
+    margin: 0.5rem 0rem;
   }
   .contact-form {
     width: 90vw;
@@ -25,32 +56,30 @@ const Wrapper = styled.section`
   .submit-btn {
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    border: 2px solid var(--clr-black);
+    border: 1.8px solid var(--ColorBlack);
   }
   .form-input {
     border-right: none;
-    color: var(--clr-grey-3);
+    color: var(--ColorBlack);
     border-top-left-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
   }
-  .submit-btn {
-    border-top-right-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
-  }
   .form-input::placeholder {
-    color: var(--clr-black);
+    color: var(--ColorBlack-35);
+    letter-spacing: 0.5px;
     text-transform: capitalize;
   }
   .submit-btn {
-    background: var(--clr-primary-5);
+    background: var(--ColorBlack);
     text-transform: capitalize;
-    letter-spacing: var(--spacing);
+    letter-spacing: 0.5px;
     cursor: pointer;
-    transition: var(--transition);
-    color: var(--clr-black);
+    transition: var(--MainTransition);
+    color: var(--ColorWhite);
   }
   .submit-btn:hover {
-    color: var(--clr-white);
+    color: var(--ColorBlack);
+    background: var(--ColorWhite);
   }
   @media (min-width: 992px) {
     .content {
@@ -67,6 +96,6 @@ const Wrapper = styled.section`
   @media (min-width: 1280px) {
     padding: 15rem 0;
   }
-`
+`;
 
-export default Contact
+export default Contact;

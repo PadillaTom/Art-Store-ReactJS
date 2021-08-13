@@ -24,6 +24,8 @@
   --ColorBlack-2: rgba(3, 3, 3, 0.2);
   --ColorBlackHover: #0c0c0c;
   --ColorPiel: #c79e88;
+  --ColorPielService: #ebebeb;
+  --ColorPielLight: #fafafa;
   --ColorFooterDivider: #505152;
   --ColorFooterGrey: #d6d6d6;
   --ColorFooterWhite: #dddddd;
@@ -39,6 +41,7 @@
   /* Utils */
   --MainTransition: all 0.3s linear;
   --TransitionFast: all 0.24s linear;
+  --ShadowLighter: 0px 3px 9px rgba(0, 0, 0, 0.05);
   --ShadowLight: 0px 3px 9px rgba(0, 0, 0, 0.1);
   --ShadowDark: 0px 3px 9px rgba(0, 0, 0, 0.23);
   --WidthMax: 1350px;
@@ -61,6 +64,10 @@ ul {
 hr {
   border: none;
   border-top: 1px solid var(--ColorFooterDivider);
+}
+.section-center {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .page-height100-desk {
