@@ -36,6 +36,8 @@ const FeaturedProducts = () => {
 };
 
 const FeaturedProductsContainer = styled.section`
+  width: 95%;
+  margin: 0 auto;
   background: var(--clr-grey-10);
   .featured {
     margin: 4rem auto;

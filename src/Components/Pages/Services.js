@@ -40,6 +40,9 @@ const ServicesContainer = styled.section`
   h4 {
     color: var(--ColorBlack-85);
   }
+  .header {
+    text-align: center;
+  }
   .header h3 {
     margin-bottom: 2rem;
     font-size: 2rem;
@@ -47,14 +50,14 @@ const ServicesContainer = styled.section`
     letter-spacing: 1px;
     font-weight: 300;
   }
-  p {
+  .header p {
     line-height: 1.5;
     color: var(--ColorBlack-7);
     font-family: var(--FontWork);
     font-weight: 300;
   }
   .services-center {
-    margin-top: 4rem;
+    margin-top: 3rem;
     display: grid;
     gap: 2.5rem;
   }
