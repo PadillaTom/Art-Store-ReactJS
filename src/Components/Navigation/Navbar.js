@@ -37,20 +37,22 @@ const Nav = () => {
 };
 
 const NavContainer = styled.nav`
-  height: 6rem;
+  z-index: 800;
+  width: 100%;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--ColorWhite);
   color: var(--ColorBlack);
   .nav-center {
-    width: 87%;
+    width: 85%;
     margin: 0 auto;
     max-width: var(--WidthMax);
   }
   .nav-header {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
   }
   .nav-toggle {
@@ -59,7 +61,7 @@ const NavContainer = styled.nav`
     color: var(--ColorBlack);
     cursor: pointer;
     svg {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
   .nav-links {
@@ -68,9 +70,9 @@ const NavContainer = styled.nav`
   .userBtnsContainer {
     display: none;
   }
+
   @media (min-width: 1150px) {
     height: 10rem;
-
     .nav-toggle {
       display: none;
     }

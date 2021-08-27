@@ -1,7 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Hero, FeaturedProducts, Services, Contact } from "../Components/Pages";
+import {
+  Hero,
+  FeaturedProducts,
+  Services,
+  Newsletter,
+} from "../Components/HomePage";
 
 const HomePage = () => {
   return (
@@ -9,7 +14,7 @@ const HomePage = () => {
       <Hero></Hero>
       <FeaturedProducts></FeaturedProducts>
       <Services></Services>
-      <Contact></Contact>
+      <Newsletter></Newsletter>
     </HomeContainer>
   );
 };

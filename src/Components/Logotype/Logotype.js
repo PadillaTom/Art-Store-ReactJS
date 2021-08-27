@@ -15,12 +15,12 @@ const Logotype = () => {
 };
 const LogoContainer = styled.nav`
   h1 {
-    font-size: 2rem;
+    font-size: 1.7rem;
     letter-spacing: 1px;
     font-family: var(--FontWork);
     font-weight: 200;
     span {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin: 0rem -0.3rem;
       color: crimson;
       font-family: var(--FontLora);
