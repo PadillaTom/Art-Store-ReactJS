@@ -96,6 +96,7 @@ const HeroContainer = styled.section`
     .explore-btn {
       padding: 2rem 4rem;
       font-size: 2.5rem;
+    }
   }
 `;
 
