@@ -25,10 +25,11 @@ const ProductContainer = styled.article`
   margin-bottom: 1.5rem;
   .container {
     position: relative;
+    transition: var(--MainTransition);
   }
   img {
     width: 100%;
-    height: 19rem !important;
+    height: 20rem !important;
     display: block;
     object-fit: cover;
     transition: var(--MainTransition);
