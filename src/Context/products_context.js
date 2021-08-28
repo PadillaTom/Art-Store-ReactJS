@@ -9,6 +9,8 @@ import {
   GET_PRODUCTS_ERROR,
   GET_PRODUCTS_SUCCESS,
   GET_SINGLE_PRODUCT,
+  GET_SINGLE_PRODUCT_ERROR,
+  GET_SINGLE_PRODUCT_SUCCESS,
 } from "../actions";
 
 import { products_url } from "../Utils/constants";
@@ -19,6 +21,9 @@ const initialState = {
   products_error: false,
   products: [],
   featured_products: [],
+  single_product_loading: false,
+  single_product_error: false,
+  single_product: {},
 };
 
 const ProductsContext = React.createContext();
@@ -34,7 +39,7 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
 
-  // *** Products ***
+  // *** Fetch All Products ***
   const fetchAllProducts = async (url) => {
     dispatch({ type: GET_PRODUCTS });
     try {
@@ -45,13 +50,28 @@ export const ProductsProvider = ({ children }) => {
       dispatch({ type: GET_PRODUCTS_ERROR });
     }
   };
+
+  // *** Fetch Single Product ***
+  const fetchSingleProduct = async (url) => {
+    dispatch({ type: GET_SINGLE_PRODUCT });
+    try {
+      const response = await axios.get(url);
+      const singleProduct = response.data;
+      dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct });
+    } catch (error) {
+      dispatch({ type: GET_SINGLE_PRODUCT_ERROR });
+    }
+  };
+
   useEffect(() => {
     fetchAllProducts(products_url);
   }, []);
 
   // *** Main ***
   return (
-    <ProductsContext.Provider value={{ ...state, openSidebar, closeSidebar }}>
+    <ProductsContext.Provider
+      value={{ ...state, openSidebar, closeSidebar, fetchSingleProduct }}
+    >
       {children}
     </ProductsContext.Provider>
   );

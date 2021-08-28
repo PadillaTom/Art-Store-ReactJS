@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { formatPrice } from "../../Utils/helpers";
+
 const ProductCard = ({ image, name, price, id }) => {
   return (
     <ProductContainer>
@@ -13,7 +15,7 @@ const ProductCard = ({ image, name, price, id }) => {
       </div>
       <footer>
         <h5>{name}</h5>
-        <p>$ {price}</p>
+        <p>{formatPrice(price)}</p>
       </footer>
     </ProductContainer>
   );
