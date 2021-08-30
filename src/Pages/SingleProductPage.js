@@ -1,8 +1,55 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
+
+import { single_product_url } from "../Utils/constants";
+import { formatPrice } from "../Utils/helpers";
+
+import { Loading, Error } from "../Components/Utils";
+
+import { useProductsContext } from "../Context/products_context";
 
 const SingleProductPage = () => {
+  const { id } = useParams();
+  const history = useHistory();
+  const {
+    single_product_loading: loading,
+    single_product_error: error,
+    single_product: product,
+    fetchSingleProduct,
+  } = useProductsContext();
+  // Fetch
+  useEffect(() => {
+    fetchSingleProduct(`${single_product_url}${id}`);
+  }, [id]);
+
+  // Redirect on Error
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        history.push("/");
+      }, 3000);
+    }
+  }, [error]);
+
+  // RENDER:
+  if (loading) {
+    return <Loading></Loading>;
+  }
+  if (error) {
+    return <Error></Error>;
+  }
+  const {
+    name,
+    price,
+    description,
+    stock,
+    stars,
+    reviews,
+    id: sku,
+    company,
+    images,
+  } = product;
   return <h4>single product page</h4>;
 };
 

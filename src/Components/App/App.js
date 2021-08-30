@@ -27,16 +27,12 @@ function App() {
         <Route path="/cart">
           <CartPage></CartPage>
         </Route>
-        <Route path="/products">
+        <Route path="/products" exact>
           <ProductsPage></ProductsPage>
         </Route>
-        <Route path="/products">
-          <ProductsPage></ProductsPage>
+        <Route path="/products/:id">
+          <SingleProductPage></SingleProductPage>
         </Route>
-        <Route
-          path="/products/:id"
-          children={<SingleProductPage></SingleProductPage>}
-        ></Route>
         <Route path="/checkout">
           <CheckoutPage></CheckoutPage>
         </Route>
