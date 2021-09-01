@@ -58,7 +58,7 @@ const SingleProductPage = () => {
           Back to Products
         </Link>
         <div className="product-center">
-          <ProductImages></ProductImages>
+          <ProductImages images={images}></ProductImages>
           <section className="content">
             <h2>{name}</h2>
             <Stars></Stars>

@@ -51,10 +51,12 @@ const ServicesContainer = styled.section`
     font-weight: 300;
   }
   .header p {
+    width: 95%;
     line-height: 1.5;
     color: var(--ColorBlack-7);
     font-family: var(--FontWork);
     font-weight: 300;
+    margin: 0 auto;
   }
   .services-center {
     margin-top: 3rem;

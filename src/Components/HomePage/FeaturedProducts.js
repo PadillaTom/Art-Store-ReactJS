@@ -41,6 +41,7 @@ const FeaturedProductsContainer = styled.section`
   margin: 0 auto;
   background: var(--clr-grey-10);
   text-align: center;
+  padding-bottom: 0rem;
   .fp-titleContainer h3 {
     font-family: var(--FontWork);
     font-size: 1.1rem;
