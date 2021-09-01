@@ -78,7 +78,7 @@ hr {
   /* Nav: 6rem; Footer: 5rem */
   min-height: calc(100vh - 11rem);
 }
-.btn {
+.btn-white {
   background: var(--ColorWhite);
   color: var(--ColorPiel);
   padding: 0.375rem 0.75rem;
@@ -94,7 +94,22 @@ hr {
   cursor: pointer;
   transition: var(--MainTransition);
 }
-.btn:hover {
+.btn-white:hover {
   background: var(--ColorBlack-85);
   color: var(--ColorWhite);
+}
+.btn-fill {
+  outline: none;
+  font-family: var(--FontWork);
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 300;
+  background: var(--ColorPiel);
+  padding: 0.7rem 2.7rem;
+  color: var(--ColorWhite);
+  box-shadow: var(--ShadowLight);
+  transition: var(--MainTransition);
+}
+.btn-fill:hover {
+  box-shadow: var(--ShadowDark);
 }

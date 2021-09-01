@@ -6,7 +6,7 @@ const ProductImages = ({ images = [{ url: "" }] }) => {
 
   return (
     <ImagesDisplayContainer>
-      <img src={mainImg.url} alt="Displayed" className="main" />
+      <img src={mainImg.url} alt="Displayed" className="mainImg" />
       <div className="gallery">
         {images.map((img, index) => {
           return (
@@ -27,13 +27,12 @@ const ProductImages = ({ images = [{ url: "" }] }) => {
 };
 
 const ImagesDisplayContainer = styled.section`
-  .main {
-    height: 600px;
+  .mainImg {
+    height: 25rem;
   }
   img {
     width: 100%;
     display: block;
-    border-radius: var(--radius);
     object-fit: cover;
   }
   .gallery {
@@ -47,7 +46,7 @@ const ImagesDisplayContainer = styled.section`
     }
   }
   .active {
-    box-shadow: 0px 0px 0px 2px var(--clr-primary-5);
+    box-shadow: 0px 0px 0px 2px var(--ColorBlack-5);
   }
   @media (max-width: 576px) {
     .main {

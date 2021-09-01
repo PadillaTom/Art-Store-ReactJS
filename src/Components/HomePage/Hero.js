@@ -14,7 +14,7 @@ const Hero = () => {
       <div className="hero-info-container">
         <h2>Art & Store</h2>
         <h1>Transform your spaces</h1>
-        <Link to="/products" className="explore-btn">
+        <Link to="/products" className="btn-fill">
           Explore
         </Link>
       </div>
@@ -67,21 +67,7 @@ const HeroContainer = styled.section`
       margin-bottom: 2.5rem;
     }
   }
-  .explore-btn {
-    outline: none;
-    font-family: var(--FontWork);
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: 300;
-    background: var(--ColorPiel);
-    padding: 0.7rem 2.7rem;
-    color: var(--ColorWhite);
-    box-shadow: var(--ShadowLight);
-    transition: var(--MainTransition);
-    &:hover {
-      box-shadow: var(--ShadowDark);
-    }
-  }
+
   @media (min-width: 768px) {
     height: 80vh;
     .hero-info-container {
@@ -93,7 +79,7 @@ const HeroContainer = styled.section`
         margin-bottom: 5rem;
       }
     }
-    .explore-btn {
+    .btn-fill {
       padding: 2rem 4rem;
       font-size: 2.5rem;
     }
