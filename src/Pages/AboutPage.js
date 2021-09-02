@@ -92,7 +92,21 @@ const AboutContainer = styled.section`
       margin: 0 auto;
     }
   }
-
+  @media (min-width: 768px) {
+    padding-bottom: 4rem;
+    .description {
+      h1 {
+        padding-bottom: 1rem;
+      }
+      h2 {
+        font-size: 6.2rem;
+      }
+      p {
+        padding-top: 4rem;
+        line-height: 1.5;
+      }
+    }
+  }
   @media (min-width: 1150px) {
     grid-template-columns: 1fr 1fr;
     place-items: center;

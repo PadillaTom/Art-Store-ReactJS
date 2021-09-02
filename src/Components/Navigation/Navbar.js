@@ -71,7 +71,16 @@ const NavContainer = styled.nav`
     display: none;
   }
 
-  @media (min-width: 1150px) {
+  @media screen and (min-width: 768px) {
+    height: 6.3rem;
+    .nav-toggle {
+      svg {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 980px) {
     height: 10rem;
     .nav-toggle {
       display: none;

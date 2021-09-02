@@ -69,19 +69,19 @@ const HeroContainer = styled.section`
   }
 
   @media (min-width: 768px) {
-    height: 80vh;
+    height: calc(100vh - 12rem);
     .hero-info-container {
       h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
       h1 {
-        font-size: 6rem;
+        font-size: 5rem;
         margin-bottom: 5rem;
       }
     }
     .btn-fill {
-      padding: 2rem 4rem;
-      font-size: 2.5rem;
+      padding: 1.2rem 3rem;
+      font-size: 1.8rem;
     }
   }
 `;

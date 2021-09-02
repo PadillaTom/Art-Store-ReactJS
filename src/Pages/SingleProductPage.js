@@ -138,7 +138,27 @@ const SingleProductContainer = styled.main`
       color: var(--FontColorDark);
     }
   }
-
+  @media (min-width: 768px) {
+    .btn-back {
+      font-size: 1.7rem;
+    }
+    .content h2 {
+      font-size: 2.5rem;
+      padding-bottom: 0;
+    }
+    .desc {
+      font-size: 1.3rem;
+      padding: 1.5rem 0rem;
+    }
+    .info {
+      grid-template-columns: 10rem 1fr;
+      font-size: 1.2rem;
+      padding: 2rem 0rem;
+      span {
+        font-size: 1.35rem;
+      }
+    }
+  }
   @media (min-width: 992px) {
     .product-center {
       grid-template-columns: 1fr 1fr;

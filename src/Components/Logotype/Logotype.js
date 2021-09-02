@@ -26,5 +26,10 @@ const LogoContainer = styled.nav`
       font-family: var(--FontLora);
     }
   }
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 2.4rem;
+    }
+  }
 `;
 export default Logotype;

@@ -44,8 +44,15 @@ const FooterContainer = styled.footer`
     text-transform: none;
     line-height: 1.25;
   }
-  @media (min-width: 776px) {
+  @media (min-width: 768px) {
     flex-direction: row;
+    font-size: 1.2rem;
+    a {
+      letter-spacing: 1.7px;
+    }
+    h5 {
+      letter-spacing: 1px;
+    }
   }
 `;
 

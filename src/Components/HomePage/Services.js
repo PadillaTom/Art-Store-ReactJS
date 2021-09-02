@@ -95,6 +95,22 @@ const ServicesContainer = styled.section`
       font-size: 2rem;
     }
   }
+  @media (min-width: 576px) {
+    .services-center {
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .services-center {
+      grid-template-columns: repeat(2, 1fr);
+      .service {
+        width: 95%;
+        h4 {
+          padding: 0.5rem 0rem;
+        }
+      }
+    }
+  }
   @media (min-width: 992px) {
     .header {
       display: grid;
@@ -102,11 +118,7 @@ const ServicesContainer = styled.section`
       z-index: 100;
     }
   }
-  @media (min-width: 576px) {
-    .services-center {
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    }
-  }
+
   @media (min-width: 1280px) {
     padding: 0;
     .section-center {

@@ -83,6 +83,16 @@ const ContactContainer = styled.section`
     color: var(--ColorBlack);
     background: var(--ColorWhite);
   }
+  @media (min-width: 768px) {
+    .contact-form {
+      margin: 0 auto;
+    }
+    .content {
+      p {
+        padding-bottom: 1rem;
+      }
+    }
+  }
   @media (min-width: 992px) {
     .content {
       display: grid;

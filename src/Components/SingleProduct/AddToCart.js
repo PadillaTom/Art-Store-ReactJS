@@ -113,5 +113,14 @@ const AddToCartContainer = styled.section`
     align-items: center;
     padding: 2.5rem 0rem;
   }
+  @media (min-width: 768px) {
+    .colors span {
+      font-size: 1.4rem;
+    }
+    .color-btn {
+      width: 1.7rem;
+      height: 1.7rem;
+    }
+  }
 `;
 export default AddToCart;
