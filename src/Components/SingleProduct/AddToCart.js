@@ -2,22 +2,84 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
-import AmountButtons from "../SingleProduct";
+import { AmountButtons } from "./";
 
-const AddToCart = () => {
-  return <h4>addToCart </h4>;
+const AddToCart = ({ product }) => {
+  const { id, stock, colors } = product;
+
+  const [mainColor, setMainColor] = useState(colors[0]);
+  const [amount, setAmount] = useState(1);
+
+  const increaseAmount = () => {
+    setAmount((oldAmount) => {
+      let tempAmount = oldAmount + 1;
+      if (tempAmount > stock) {
+        tempAmount = stock;
+      }
+      return tempAmount;
+    });
+  };
+  const decreaseAmount = () => {
+    setAmount((oldAmount) => {
+      let tempAmount = oldAmount - 1;
+      if (tempAmount < 1) {
+        tempAmount = 1;
+      }
+      return tempAmount;
+    });
+  };
+
+  // Return:
+  return (
+    <AddToCartContainer>
+      <div className="colors">
+        <span>Colors:</span>
+        <div>
+          {colors.map((color, index) => {
+            return (
+              <button
+                key={index}
+                style={{ background: color }}
+                className={`${
+                  mainColor === color ? "color-btn active" : "color-btn"
+                }`}
+                onClick={() => {
+                  setMainColor(color);
+                }}
+              >
+                {mainColor === color ? <FaCheck></FaCheck> : null}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+      <div className="btn-container">
+        <AmountButtons
+          amount={amount}
+          increase={increaseAmount}
+          decrease={decreaseAmount}
+        ></AmountButtons>
+        <Link to="/cart" className="btn btn-fill">
+          Add To Cart
+        </Link>
+      </div>
+    </AddToCartContainer>
+  );
 };
 
-const Wrapper = styled.section`
+const AddToCartContainer = styled.section`
   margin-top: 2rem;
   .colors {
     display: grid;
-    grid-template-columns: 125px 1fr;
+    grid-template-columns: 8rem 1fr;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
     span {
-      text-transform: capitalize;
-      font-weight: 700;
+      font-family: var(--FontWork);
+      letter-spacing: 0.5px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--FontColorDark);
     }
     div {
       display: flex;
@@ -32,25 +94,24 @@ const Wrapper = styled.section`
     margin-right: 0.5rem;
     border: none;
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.65;
     display: flex;
     align-items: center;
     justify-content: center;
     svg {
       font-size: 0.75rem;
-      color: var(--clr-white);
+      color: var(--ColorWhite);
     }
   }
   .active {
     opacity: 1;
   }
   .btn-container {
-    margin-top: 2rem;
-  }
-
-  .btn {
-    margin-top: 1rem;
-    width: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 0rem;
   }
 `;
 export default AddToCart;

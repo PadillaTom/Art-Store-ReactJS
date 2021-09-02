@@ -1,20 +1,40 @@
-import React from 'react'
-import styled from 'styled-components'
-import { FaPlus, FaMinus } from 'react-icons/fa'
+import React from "react";
+import styled from "styled-components";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
-const AmountButtons = () => {
-  return <h4>amount buttons </h4>
-}
+const AmountButtons = ({ amount, increase, decrease }) => {
+  return (
+    <AmountBtnsContainer className="amount-btns">
+      <button
+        className="amount-btn"
+        type="button"
+        onClick={() => {
+          decrease();
+        }}
+      >
+        <FaMinus></FaMinus>
+      </button>
+      <h2 className="amount">{amount}</h2>
+      <button
+        className="amount-btn"
+        type="button"
+        onClick={() => {
+          increase();
+        }}
+      >
+        <FaPlus></FaPlus>
+      </button>
+    </AmountBtnsContainer>
+  );
+};
 
-const Wrapper = styled.div`
+const AmountBtnsContainer = styled.div`
   display: grid;
-  width: 140px;
-  justify-items: center;
+  width: 10rem;
+  place-items: center;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  h2 {
-    margin-bottom: 0;
-  }
+  padding: 0.3rem;
+  background: var(--ColorPielLight-7);
   button {
     background: transparent;
     border-color: transparent;
@@ -26,9 +46,11 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
   }
-  h2 {
-    margin-bottom: 0;
+  .amount {
+    font-family: var(--FontWork);
+    font-weight: 500;
+    font-size: 0.7rem;
   }
-`
+`;
 
-export default AmountButtons
+export default AmountButtons;
