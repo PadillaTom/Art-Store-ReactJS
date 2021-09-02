@@ -26,9 +26,8 @@ const UserButtons = () => {
 const UserBtns = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  place-items: center;
   width: 14rem;
-
   .cart-btn {
     color: var(--FontColorGrey);
     font-family: var(--FontWork);
@@ -86,6 +85,29 @@ const UserBtns = styled.div`
     transition: var(--TransitionFast);
     &:hover {
       color: var(--ColorBlack);
+    }
+  }
+  @media (min-width: 720px) {
+    padding-top: 4rem;
+    width: 25rem;
+    .cart-btn {
+      font-size: 2rem;
+    }
+    .cart-container {
+      svg {
+        font-size: 2.5rem;
+      }
+    }
+    .cart-value {
+      width: 1.9rem;
+      height: 1.9rem;
+      font-size: 0.97rem;
+    }
+    .auth-btn {
+      font-size: 2.1rem;
+      svg {
+        font-size: 2.5rem;
+      }
     }
   }
 `;

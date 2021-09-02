@@ -89,5 +89,25 @@ const ProductContainer = styled.article`
     color: var(--ColorBlack-7);
     letter-spacing: 1.2px;
   }
+
+  @media (min-width: 768px) {
+    width: 100%;
+    img {
+      height: 24rem !important;
+    }
+    .link {
+      font-size: 1.5rem;
+      letter-spacing: 5px;
+    }
+    footer {
+      margin-top: 1.5rem;
+      h5 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+    }
+  }
 `;
 export default ProductCard;

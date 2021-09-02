@@ -47,7 +47,6 @@ const Sidebar = () => {
 
 const SidebarContainer = styled.div`
   text-align: center;
-  /* display: none; */
   .sidebar-header {
     display: flex;
     justify-content: space-between;
@@ -111,8 +110,17 @@ const SidebarContainer = styled.div`
     .sidebar-header {
       height: 8rem;
     }
+    .close-btn {
+      font-size: 2.2rem;
+    }
     .links a {
+      padding: 1.5rem 2.5rem;
+      font-size: 1.8rem;
       padding-left: 3.5rem;
+    }
+    .links a:hover {
+      padding: 1.5rem 2.5rem;
+      padding-left: 4rem;
     }
   }
   @media screen and (min-width: 1150px) {

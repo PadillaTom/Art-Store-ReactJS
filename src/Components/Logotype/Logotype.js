@@ -26,7 +26,7 @@ const LogoContainer = styled.nav`
       font-family: var(--FontLora);
     }
   }
-  @media screen and (min-width: 768px) {
+  @media (min-width: 720px) {
     h1 {
       font-size: 2.4rem;
     }
