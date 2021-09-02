@@ -30,7 +30,6 @@ const Newsletter = () => {
 };
 const ContactContainer = styled.section`
   padding: 5rem 0;
-  border-bottom: 1px solid var(--ColorFooterDivider);
   text-align: center;
   h3 {
     text-transform: none;

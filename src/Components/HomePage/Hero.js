@@ -24,7 +24,7 @@ const Hero = () => {
 
 const HeroContainer = styled.section`
   width: 100%;
-  height: 95vh;
+  height: calc(100vh - 5rem);
   position: relative;
   .img-container {
     width: 100%;

@@ -29,6 +29,7 @@ const FooterContainer = styled.footer`
   text-align: center;
   font-family: var(--FontWork);
   letter-spacing: 0.7px;
+  border-top: 1px solid var(--ColorFooterGrey);
   a {
     font-family: var(--FontLato);
     color: var(--ColorBlack);
