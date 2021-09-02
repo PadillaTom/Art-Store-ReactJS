@@ -97,7 +97,7 @@ const ProductContainer = styled.article`
     }
     .link {
       font-size: 1.5rem;
-      letter-spacing: 5px;
+      letter-spacing: 3.5px;
     }
     footer {
       margin-top: 1.5rem;
