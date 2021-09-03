@@ -54,6 +54,10 @@ const FooterContainer = styled.footer`
       letter-spacing: 1px;
     }
   }
+  @media (min-width: 980px) {
+    font-size: 1.1rem;
+    height: 6rem;
+  }
 `;
 
 export default Footer;

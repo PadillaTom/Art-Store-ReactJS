@@ -109,5 +109,16 @@ const ProductContainer = styled.article`
       }
     }
   }
+  @media (min-width: 980px) {
+    img {
+      height: 27rem !important;
+    }
+    footer h5 {
+      font-size: 2.2rem;
+    }
+    footer p {
+      font-size: 1.5rem;
+    }
+  }
 `;
 export default ProductCard;

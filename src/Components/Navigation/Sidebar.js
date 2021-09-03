@@ -106,7 +106,8 @@ const SidebarContainer = styled.div`
   .userBtnsContainer {
     margin: 2rem auto;
   }
-  @media screen and (min-width: 720px) {
+
+  @media (min-width: 720px) {
     .sidebar-header {
       height: 8rem;
     }
@@ -123,7 +124,7 @@ const SidebarContainer = styled.div`
       padding-left: 4rem;
     }
   }
-  @media screen and (min-width: 1150px) {
+  @media (min-width: 980px) {
     .sidebar {
       display: none;
     }

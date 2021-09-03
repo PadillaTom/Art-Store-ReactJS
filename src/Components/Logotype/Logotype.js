@@ -31,5 +31,10 @@ const LogoContainer = styled.nav`
       font-size: 2.4rem;
     }
   }
+  @media (min-width: 980px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
 `;
 export default Logotype;

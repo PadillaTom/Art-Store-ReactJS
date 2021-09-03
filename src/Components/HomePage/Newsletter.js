@@ -37,14 +37,18 @@ const ContactContainer = styled.section`
     letter-spacing: 1px;
     font-weight: 300;
   }
-  p {
-    padding-top: 1rem;
-    line-height: 2;
-    max-width: 45em;
-    font-family: var(--FontWork);
-    font-weight: 300;
-    color: var(--ColorBlack-7);
-    margin: 0.5rem 0rem;
+  .content {
+    display: grid;
+    place-items: center;
+    p {
+      padding-top: 1rem;
+      line-height: 2;
+      max-width: 45em;
+      font-family: var(--FontWork);
+      font-weight: 300;
+      color: var(--ColorBlack-7);
+      margin: 0.5rem 0rem;
+    }
   }
   .contact-form {
     margin-top: 1rem;
@@ -83,13 +87,21 @@ const ContactContainer = styled.section`
     color: var(--ColorBlack);
     background: var(--ColorWhite);
   }
+
   @media (min-width: 768px) {
-    .contact-form {
-      margin: 0 auto;
-    }
     .content {
       p {
         padding-bottom: 1rem;
+      }
+    }
+  }
+  @media (min-width: 980px) {
+    h3 {
+      font-size: 2.6rem;
+    }
+    .content {
+      p {
+        font-size: 1.15rem;
       }
     }
   }

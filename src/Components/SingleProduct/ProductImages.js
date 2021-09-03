@@ -49,19 +49,23 @@ const ImagesDisplayContainer = styled.section`
     box-shadow: 0px 0px 0px 2px var(--ColorBlack-5);
   }
   @media (max-width: 576px) {
-    .main {
-      height: 300px;
-    }
     .gallery {
       img {
         height: 50px;
       }
     }
   }
-  @media (min-width: 992px) {
-    .main {
-      height: 500px;
+  @media (min-width: 980px) {
+    .mainImg {
+      height: 65vh;
     }
+    .gallery {
+      img {
+        height: 6.7rem;
+      }
+    }
+  }
+  @media (min-width: 992px) {
     .gallery {
       img {
         height: 75px;

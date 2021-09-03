@@ -73,6 +73,23 @@ const FeaturedProductsContainer = styled.section`
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     }
   }
+  @media (min-width: 980px) {
+    .fp-titleContainer h3 {
+      font-family: var(--FontWork);
+      font-size: 1.4rem;
+      font-weight: 200;
+      letter-spacing: 2px;
+    }
+    .fp-titleContainer h1 {
+      font-size: 3.3rem;
+      font-family: var(--FontLora);
+      letter-spacing: 1.7px;
+      font-weight: 200;
+    }
+    .featured {
+      gap: 2rem;
+    }
+  }
 `;
 
 export default FeaturedProducts;

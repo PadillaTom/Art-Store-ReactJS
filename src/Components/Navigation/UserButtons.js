@@ -110,5 +110,28 @@ const UserBtns = styled.div`
       }
     }
   }
+  @media (min-width: 980px) {
+    padding-top: 0;
+    width: 15rem;
+    .cart-btn {
+      font-size: 1.1rem;
+    }
+    .cart-container {
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+    .cart-value {
+      width: 1rem;
+      height: 1rem;
+      font-size: 0.75rem;
+    }
+    .auth-btn {
+      font-size: 1.2rem;
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+  }
 `;
 export default UserButtons;

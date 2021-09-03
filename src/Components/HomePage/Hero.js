@@ -84,6 +84,26 @@ const HeroContainer = styled.section`
       font-size: 1.8rem;
     }
   }
+  @media (min-width: 980px) {
+    // Fixed Navbar:
+    padding-top: 5rem;
+    height: calc(100vh - 2rem);
+    .hero-info-container {
+      padding-top: 3.7%;
+      h2 {
+        font-size: 1.5rem;
+      }
+      h1 {
+        font-size: 6rem;
+        letter-spacing: 4px;
+        margin-bottom: 4rem;
+      }
+    }
+    .btn-fill {
+      padding: 1.2rem 3rem;
+      font-size: 2rem;
+    }
+  }
 `;
 
 export default Hero;

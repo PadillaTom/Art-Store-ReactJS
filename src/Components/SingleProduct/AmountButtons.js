@@ -55,6 +55,12 @@ const AmountBtnsContainer = styled.div`
     width: 13rem;
     padding: 2rem 0rem;
   }
+  @media (min-width: 980px) {
+    padding: 1rem 0rem;
+    .amount {
+      font-size: 1.9rem !important;
+    }
+  }
 `;
 
 export default AmountButtons;

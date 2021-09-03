@@ -159,6 +159,15 @@ const SingleProductContainer = styled.main`
       }
     }
   }
+  @media (min-width: 980px) {
+    // Fixed Navbar:
+    padding-top: 9.5rem;
+    .content {
+      h2 {
+        font-size: 4rem;
+      }
+    }
+  }
   @media (min-width: 992px) {
     .product-center {
       grid-template-columns: 1fr 1fr;

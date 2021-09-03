@@ -111,6 +111,26 @@ const ServicesContainer = styled.section`
       }
     }
   }
+  @media (min-width: 980px) {
+    .header h3 {
+      font-size: 2.6rem;
+    }
+    .header p {
+      font-size: 1.2rem;
+    }
+    .service {
+      span {
+        width: 5rem;
+        height: 5rem;
+      }
+      h4 {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 1.15rem;
+      }
+    }
+  }
   @media (min-width: 992px) {
     .header {
       display: grid;

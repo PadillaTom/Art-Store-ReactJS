@@ -81,12 +81,15 @@ const NavContainer = styled.nav`
   }
 
   @media screen and (min-width: 980px) {
-    height: 10rem;
+    height: 5.5rem;
+    box-shadow: var(--ShadowLight);
+    position: fixed;
+    top: 0;
     .nav-toggle {
       display: none;
     }
     .nav-center {
-      width: 100%;
+      width: 85%;
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;

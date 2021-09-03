@@ -25,7 +25,7 @@ const AboutPage = () => {
   }, []);
   const { width, height } = windowDimensions;
   let isDesk = false;
-  if (width >= 1150) {
+  if (width >= 980) {
     isDesk = true;
   }
 
@@ -105,6 +105,28 @@ const AboutContainer = styled.section`
         padding-top: 4rem;
         line-height: 1.5;
       }
+    }
+  }
+  @media (min-width: 980px) {
+    // Fixed Navbar:
+    padding-top: 9.5rem;
+    .description {
+      h1 {
+        font-size: 1.2rem;
+        padding: 1rem 0rem;
+      }
+      h2 {
+        font-size: 4.7rem;
+      }
+      p {
+        padding-top: 3rem;
+        font-size: 1.5rem;
+      }
+    }
+    img {
+      width: 90%;
+      margin: 0 auto;
+      height: 56rem;
     }
   }
   @media (min-width: 1150px) {
