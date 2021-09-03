@@ -139,8 +139,20 @@ const ServicesContainer = styled.section`
     }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: 1150px) {
     padding: 0;
+    .header {
+      padding: 3.5rem 0rem;
+      h3 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.4rem;
+      }
+    }
+    .services-center {
+      grid-template-columns: repeat(3, 1fr);
+    }
     .section-center {
       transform: translateY(5rem);
     }

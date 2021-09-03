@@ -72,6 +72,13 @@ const ImagesDisplayContainer = styled.section`
       }
     }
   }
+  @media (min-width: 1150px) {
+    .gallery {
+      img {
+        height: 110px;
+      }
+    }
+  }
 `;
 
 export default ProductImages;

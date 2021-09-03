@@ -168,13 +168,24 @@ const SingleProductContainer = styled.main`
       }
     }
   }
-  @media (min-width: 992px) {
+  @media (min-width: 1150px) {
     .product-center {
       grid-template-columns: 1fr 1fr;
       align-items: center;
+      margin-top: 3rem;
+      margin-bottom: 7rem;
+    }
+    .content {
+      padding-top: 5%;
+    }
+    .desc {
+      padding: 0.7rem 0rem;
+    }
+    .info {
+      padding-bottom: 0.5rem;
     }
     .price {
-      font-size: 1.25rem;
+      font-size: 2rem;
     }
   }
 `;

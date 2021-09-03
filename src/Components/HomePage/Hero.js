@@ -104,6 +104,13 @@ const HeroContainer = styled.section`
       font-size: 2rem;
     }
   }
+  @media (min-width: 1150px) {
+    .hero-info-container {
+      h1 {
+        padding-top: 2rem;
+      }
+    }
+  }
 `;
 
 export default Hero;

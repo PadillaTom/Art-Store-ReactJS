@@ -117,8 +117,20 @@ const ContactContainer = styled.section`
       margin-bottom: 0;
     }
   }
-  @media (min-width: 1280px) {
-    padding: 15rem 0;
+  @media (min-width: 1150px) {
+    padding: 14rem 0;
+    padding-bottom: 10rem;
+    width: 85%;
+    margin: 0 auto;
+    h3 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+    .content {
+      p {
+        font-size: 1.2rem;
+      }
+    }
   }
 `;
 
