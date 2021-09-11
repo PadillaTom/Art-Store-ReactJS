@@ -1,3 +1,4 @@
 import Error from "./Error";
 import Loading from "./Loading";
-export { Error, Loading };
+import ScrollToTop from "./ScrollToTop";
+export { Error, Loading, ScrollToTop };

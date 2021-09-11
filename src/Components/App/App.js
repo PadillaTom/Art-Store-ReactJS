@@ -11,10 +11,12 @@ import {
   ProductsPage,
   SingleProductPage,
 } from "../../Pages";
+import { ScrollToTop } from "../Utils";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar></Navbar>
       <Sidebar></Sidebar>
       <Switch>

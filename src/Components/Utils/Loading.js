@@ -8,11 +8,15 @@ const Loading = () => {
 };
 
 const LoadingContainer = styled.div`
-  padding: 2rem 0rem;
+  width: 90%;
+  height: 20vh;
+  display: grid;
+  place-items: center;
   font-family: var(--FontWork);
-  font-size: 1.2rem;
+  color: var(--ColorBlack-85);
+  font-size: 3.2rem;
   font-weight: 300;
-  letter-spacing: 0.9px;
+  letter-spacing: 1.1px;
 `;
 
 export default Loading;
