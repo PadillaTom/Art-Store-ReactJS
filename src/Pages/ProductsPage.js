@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ProductsPage = () => {
-  return <h4>products page</h4>;
+  return <h4>All Products Page</h4>;
 };
 
 const Wrapper = styled.div`
