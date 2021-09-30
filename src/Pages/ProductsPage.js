@@ -1,8 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
+import { Filters, Sort, ProductList } from "../Components/Products";
+
 const ProductsPage = () => {
-  return <h4>All Products Page</h4>;
+  return (
+    <Wrapper className="page">
+      <div className="section-center products">
+        <Filters></Filters>
+        <div>
+          <Sort></Sort>
+          <ProductList></ProductList>
+        </div>
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.div`
@@ -15,6 +27,9 @@ const Wrapper = styled.div`
     .products {
       grid-template-columns: 200px 1fr;
     }
+  }
+  @media (min-width: 980px) {
+    padding-top: 7rem;
   }
 `;
 

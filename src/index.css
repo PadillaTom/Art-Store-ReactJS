@@ -70,7 +70,6 @@ hr {
   width: 90%;
   margin: 0 auto;
 }
-
 .page-height100-desk {
   /* Nav: 10rem; Footer: 5rem */
   min-height: calc(100vh - 15rem);
