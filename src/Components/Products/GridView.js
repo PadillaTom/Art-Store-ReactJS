@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ProductCard } from ".";
+import { GridCard } from "../SingleProduct";
 
 const GridView = ({ products }) => {
   return (
     <Wrapper>
       <div className="products-container">
         {products.map((product) => {
-          return <ProductCard key={product.id} {...product}></ProductCard>;
+          console.log(product.image);
+          return <GridCard key={product.id} product={product}></GridCard>;
         })}
       </div>
     </Wrapper>

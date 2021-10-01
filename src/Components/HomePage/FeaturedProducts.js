@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { Error, Loading } from "../Utils";
-import { ProductCard } from "../Products";
+import { ProductCard } from "../SingleProduct";
 
 import { useProductsContext } from "../../Context/products_context";
 
