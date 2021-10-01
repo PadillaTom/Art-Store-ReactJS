@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Filters = () => {
-  return <h4>filters</h4>;
+  return <h4>Aca Vienen FILTROS</h4>;
 };
 
 const Wrapper = styled.section`
