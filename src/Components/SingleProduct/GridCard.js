@@ -24,14 +24,14 @@ const GridCard = ({ product }) => {
 const ProductContainer = styled.article`
   width: 95%;
   margin: 0 auto;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.7rem;
   .container {
     position: relative;
     transition: var(--MainTransition);
   }
   img {
     width: 100%;
-    height: 20rem !important;
+    height: 13rem !important;
     display: block;
     object-fit: cover;
     transition: var(--MainTransition);
@@ -66,7 +66,7 @@ const ProductContainer = styled.article`
   footer {
     width: 95%;
     margin: 0 auto;
-    margin-top: 1.2rem;
+    margin-top: 0.7rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,7 +74,7 @@ const ProductContainer = styled.article`
   }
   footer h5 {
     font-family: var(--FontWork);
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 300;
     letter-spacing: 2px;
     text-transform: capitalize;
@@ -84,8 +84,8 @@ const ProductContainer = styled.article`
   footer p {
     font-family: var(--FontLora);
     font-weight: 300;
-    font-size: 1rem;
-    letter-spacing: 2px;
+    font-size: 1.3rem;
+    letter-spacing: 1.3px;
     color: var(--ColorBlack-7);
     letter-spacing: 1.2px;
   }
@@ -93,16 +93,16 @@ const ProductContainer = styled.article`
   @media (min-width: 768px) {
     width: 100%;
     img {
-      height: 24rem !important;
+      height: 15rem !important;
     }
     .link {
       font-size: 1.5rem;
       letter-spacing: 3.5px;
     }
     footer {
-      margin-top: 1.5rem;
+      margin-top: 1rem;
       h5 {
-        font-size: 2rem;
+        font-size: 2.1rem;
       }
       p {
         font-size: 1.3rem;
@@ -111,13 +111,28 @@ const ProductContainer = styled.article`
   }
   @media (min-width: 980px) {
     img {
-      height: 27rem !important;
+      height: 20rem !important;
     }
     footer h5 {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
     footer p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+    }
+  }
+  @media (min-width: 1150px) {
+    img {
+      height: 17rem !important;
+    }
+    footer {
+      margin-top: 0.7rem;
+    }
+    footer h5 {
+      text-align: center;
+      font-size: 1.7rem;
+    }
+    footer p {
+      font-size: 1.35rem;
     }
   }
 `;

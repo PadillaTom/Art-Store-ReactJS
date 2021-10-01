@@ -8,7 +8,6 @@ const GridView = ({ products }) => {
     <Wrapper>
       <div className="products-container">
         {products.map((product) => {
-          console.log(product.image);
           return <GridCard key={product.id} product={product}></GridCard>;
         })}
       </div>
@@ -31,7 +30,7 @@ const Wrapper = styled.section`
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  @media (min-width: 1170px) {
+  @media (min-width: 1150px) {
     .products-container {
       grid-template-columns: repeat(3, 1fr);
     }
