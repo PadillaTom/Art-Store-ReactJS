@@ -68,9 +68,27 @@ export const FilterProvider = ({ children }) => {
       inputValue = e.target.textContent;
     }
 
+    // Handle HTML Data-Attribute :
+    if (filterName === "color") {
+      inputValue = e.target.dataset.color;
+    }
+
+    // Handle INT to STR in state, when using RANGE Value:
+    if (filterName === "price") {
+      inputValue = Number(inputValue);
+    }
+
+    // Handle Checkbox:
+    if (filterName === "shipping") {
+      inputValue = e.target.checked;
+    }
+
     dispatch({ type: UPDATE_FILTERS, payload: { filterName, inputValue } });
   };
-  const cleanFilters = () => {};
+
+  const cleanFilters = () => {
+    dispatch({ type: CLEAR_FILTERS });
+  };
 
   return (
     <FilterContext.Provider
