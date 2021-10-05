@@ -1,8 +1,80 @@
 import React from "react";
 import styled from "styled-components";
 
+import { useFilterContext } from "../../Context/filter_context";
+import { getUniqueValues } from "../../Utils/helpers";
+
 const Filters = () => {
-  return <h4>Aca Vienen FILTROS</h4>;
+  const {
+    filters: {
+      text,
+      category,
+      company,
+      color,
+      min_price,
+      max_price,
+      sjipping,
+      price,
+    },
+    updateFilters,
+    clearFilters,
+    all_products,
+  } = useFilterContext();
+  const categories = getUniqueValues(all_products, "category");
+  const companies = getUniqueValues(all_products, "company");
+  const colors = getUniqueValues(all_products, "colors");
+
+  return (
+    <Wrapper>
+      <div className="content">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          {/* Search Input */}
+          <div className="form-control">
+            <input
+              type="text"
+              name="text"
+              placeholder="Search"
+              className="search-input"
+              value={text}
+              onChange={updateFilters}
+            />
+          </div>
+          {/* End Search Input */}
+
+          {/* Categories */}
+          <div className="form-control">
+            <h5>category</h5>
+            <div>
+              {categories.map((cat, index) => {
+                return (
+                  <button
+                    key={index}
+                    name="category"
+                    type="button"
+                    onClick={updateFilters}
+                    className={`${category === cat.toLowerCase() && "active"}`}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          {/* End Categories */}
+
+          {/* Categories */}
+          {/* End Categories */}
+
+          {/* Categories */}
+          {/* End Categories */}
+        </form>
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.section`

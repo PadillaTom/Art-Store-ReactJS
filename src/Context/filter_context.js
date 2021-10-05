@@ -41,8 +41,9 @@ export const FilterProvider = ({ children }) => {
   }, [products]);
 
   useEffect(() => {
+    dispatch({ type: FILTER_PRODUCTS });
     dispatch({ type: SORT_PRODUCTS });
-  }, [products, state.sortType]);
+  }, [products, state.sortType, state.filters]);
 
   // Views
   const setGridView = () => {
@@ -58,7 +59,17 @@ export const FilterProvider = ({ children }) => {
     dispatch({ type: UPDATE_SORT, payload: value });
   };
 
-  const updateFilters = (e) => {};
+  const updateFilters = (e) => {
+    let filterName = e.target.name;
+    let inputValue = e.target.value;
+
+    // Handle HTML Button:
+    if (filterName === "category") {
+      inputValue = e.target.textContent;
+    }
+
+    dispatch({ type: UPDATE_FILTERS, payload: { filterName, inputValue } });
+  };
   const cleanFilters = () => {};
 
   return (
