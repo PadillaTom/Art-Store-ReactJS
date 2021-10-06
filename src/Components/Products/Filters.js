@@ -164,22 +164,27 @@ const Filters = () => {
 
 const Wrapper = styled.section`
   .form-control {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.7rem;
     h5 {
       margin-bottom: 0.5rem;
+      font-family: var(--FontWork);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      font-size: 0.95rem;
+      color: var(--ColorBlack);
     }
   }
   .search-input {
     padding: 0.5rem;
-    background: var(--clr-grey-10);
-    border-radius: var(--radius);
+    background: var(--ColorSearchInput);
     border-color: transparent;
-    letter-spacing: var(--spacing);
+    letter-spacing: 0.5px;
   }
   .search-input::placeholder {
     text-transform: capitalize;
+    color: var(--ColorBlack-35);
   }
-
+  // Category:
   button {
     display: block;
     margin: 0.25em 0;
@@ -188,19 +193,25 @@ const Wrapper = styled.section`
     background: transparent;
     border: none;
     border-bottom: 1px solid transparent;
-    letter-spacing: var(--spacing);
-    color: var(--clr-grey-5);
+    letter-spacing: 0.5px;
+    color: var(--ColorBlack-85);
     cursor: pointer;
+    transition: var(--MainTransition);
   }
   .active {
-    border-color: var(--clr-grey-5);
+    border-color: var(--ColorSemiCrimson);
+    color: var(--ColorSemiCrimson);
   }
+  // Company:
   .company {
-    background: var(--clr-grey-10);
-    border-radius: var(--radius);
+    background: var(--ColorSearchInput);
+    color: var(--ColorBlack-7);
     border-color: transparent;
     padding: 0.25rem;
+    text-transform: capitalize;
+    letter-spacing: 0.4px;
   }
+  // Colors:
   .colors {
     display: flex;
     align-items: center;
@@ -209,6 +220,7 @@ const Wrapper = styled.section`
     display: inline-block;
     width: 1rem;
     height: 1rem;
+    color: inherit;
     border-radius: 50%;
     background: #222;
     margin-right: 0.5rem;
@@ -218,9 +230,10 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--MainTransition);
     svg {
       font-size: 0.5rem;
-      color: var(--clr-white);
+      color: var(--ColorWhite);
     }
   }
   .all-btn {
@@ -236,23 +249,42 @@ const Wrapper = styled.section`
   .all-btn .active {
     text-decoration: underline;
   }
+  // Price:
   .price {
     margin-bottom: 0.25rem;
+    font-family: var(--FontWork);
+    letter-spacing: 0.6px;
+    font-weight: 300;
+    color: var(--ColorBlack);
   }
+  // Shipping:
   .shipping {
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    text-transform: capitalize;
     column-gap: 0.5rem;
     font-size: 1rem;
   }
+  // Clean Filters:
   .clear-btn {
-    background: var(--clr-red-dark);
-    color: var(--clr-white);
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--radius);
+    background: var(--ColorWhite);
+    color: var(--ColorBlack);
+    font-weight: 300;
+    font-family: var(--FontWork);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 0.7rem;
+    transition: var(--MainTransition);
+    border: 1px solid var(--ColorBlack);
   }
+  .clear-btn:hover {
+    color: var(--ColorWhite);
+    background: var(--ColorBlack);
+    border: 1px solid var(--ColorBlack);
+  }
+
   @media (min-width: 768px) {
     .content {
       position: sticky;
