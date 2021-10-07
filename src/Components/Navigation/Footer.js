@@ -44,6 +44,7 @@ const FooterContainer = styled.footer`
     text-transform: none;
     line-height: 1.25;
   }
+
   @media (min-width: 768px) {
     flex-direction: row;
     font-size: 1.2rem;
@@ -54,6 +55,7 @@ const FooterContainer = styled.footer`
       letter-spacing: 1px;
     }
   }
+
   @media (min-width: 980px) {
     font-size: 1.1rem;
     height: 6rem;

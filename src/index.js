@@ -5,11 +5,14 @@ import "./index.css";
 import { App } from "./Components/App";
 import { ProductsProvider } from "./Context/products_context";
 import { FilterProvider } from "./Context/filter_context";
+import { CartProvider } from "./Context/cart_context";
 
 ReactDOM.render(
   <ProductsProvider>
     <FilterProvider>
-      <App />
+      <CartProvider>
+        <App />
+      </CartProvider>
     </FilterProvider>
   </ProductsProvider>,
   document.getElementById("root")
