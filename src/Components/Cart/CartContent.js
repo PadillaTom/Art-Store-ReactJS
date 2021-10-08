@@ -1,8 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import { CartColumns, CartItem, CartTotals } from "./";
+import { useCartContext } from "../../Context/cart_context";
+
 const CartContent = () => {
-  return <h4>cart content </h4>;
+  const { cart, clearCart } = useCartContext();
+  console.log(cart);
+  return (
+    <Wrapper>
+      <CartColumns />
+      {cart.map((cartItem) => {
+        return <CartItem key={cartItem.id} {...cartItem}></CartItem>;
+      })}
+      <hr />
+      <div className="link-container">
+        <Link to="/products" className="link-btn">
+          Continue Shopping
+        </Link>
+        <button
+          type="button"
+          className="link-btn clear-btn"
+          onClick={clearCart}
+        >
+          Empty Cart
+        </button>
+      </div>
+      <CartTotals></CartTotals>
+    </Wrapper>
+  );
 };
 const Wrapper = styled.section`
   .link-container {

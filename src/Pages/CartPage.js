@@ -19,11 +19,7 @@ const CartPage = () => {
       </Wrapper>
     );
   }
-  return (
-    <Wrapper>
-      <CartContent></CartContent>
-    </Wrapper>
-  );
+  return <CartContent></CartContent>;
 };
 
 // Nav and Footer Heights:
