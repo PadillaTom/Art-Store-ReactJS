@@ -1,8 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 
+import { formatPrice } from "../../Utils/helpers";
+import { useCartContext } from "../../Context/cart_context";
+import { Link } from "react-router-dom";
+
 const CartTotals = () => {
-  return <h4>cart totals</h4>;
+  const { total_amount, shipping_fee } = useCartContext();
+  return (
+    <Wrapper>
+      <div>
+        <article>
+          <h5>
+            Subtotal: <span>{formatPrice(total_amount)}</span>
+          </h5>
+          <p>
+            Shipping Fee: <span>{formatPrice(shipping_fee)}</span>
+          </p>
+          <hr />
+          <h4>
+            Order Total: <span>{formatPrice(total_amount + shipping_fee)}</span>
+          </h4>
+        </article>
+        <Link to="/checkout" className="btn">
+          Checkout
+        </Link>
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.section`
