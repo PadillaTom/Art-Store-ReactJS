@@ -1,8 +1,52 @@
 import React from "react";
+import { FaTrash } from "react-icons/fa";
 import styled from "styled-components";
 
-const CartItem = () => {
-  return <h4>cart item</h4>;
+import { AmountButtons } from "../SingleProduct";
+
+import { formatPrice } from "../../Utils/helpers";
+import { useCartContext } from "../../Context/cart_context";
+
+const CartItem = ({ id, image, name, color, price, amount }) => {
+  const { removeFromCart, toggleAmount } = useCartContext();
+
+  const increase = () => {
+    toggleAmount(id, "inc");
+  };
+  const decrease = () => {
+    toggleAmount(id, "dec");
+  };
+
+  return (
+    <Wrapper>
+      <div className="title">
+        <img src={image} alt={name} />
+        <div>
+          <h5 className="name">{name}</h5>
+          <p className="color">
+            Color: <span style={{ background: color }}></span>
+          </p>
+          <h5 className="price-small">{formatPrice(price)}</h5>
+        </div>
+      </div>
+      <h5 className="price">{formatPrice(price)}</h5>
+      <AmountButtons
+        amount={amount}
+        increase={increase}
+        decrease={decrease}
+      ></AmountButtons>
+      <h5 className="subtotal">{formatPrice(price * amount)}</h5>
+      <button
+        type="button"
+        className="remove-btn"
+        onClick={() => {
+          removeFromCart(id);
+        }}
+      >
+        <FaTrash></FaTrash>
+      </button>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.article`
@@ -51,7 +95,6 @@ const Wrapper = styled.article`
       display: inline-block;
       width: 0.5rem;
       height: 0.5rem;
-      background: red;
       margin-left: 0.5rem;
       border-radius: var(--radius);
     }

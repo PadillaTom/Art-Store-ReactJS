@@ -37,16 +37,24 @@ export const CartProvider = ({ children }) => {
   };
 
   // Remove Item:
-  const removeFromCart = (id) => {};
+  const removeFromCart = (id) => {
+    dispatch({ type: REMOVE_CART_ITEM, payload: id });
+  };
   // Toggle Amount:
-  const toggleAmount = (id, value) => {};
+  const toggleAmount = (id, value) => {
+    dispatch({ type: TOGGLE_CART_ITEM_AMOUNT, payload: { id, value } });
+  };
   // Clear Cart:
-  const clearCart = () => {};
+  const clearCart = () => {
+    dispatch({ type: CLEAR_CART });
+  };
 
   // ::: UseEffects :::
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(state.cart));
+    dispatch({ type: COUNT_CART_TOTALS });
   }, [state.cart]);
+
   return (
     <CartContext.Provider
       value={{ ...state, addToCart, removeFromCart, toggleAmount, clearCart }}
