@@ -38,7 +38,6 @@ const Wrapper = styled.article`
     font-size: 0.75rem;
     margin-bottom: 0;
   }
-
   .color {
     color: var(--clr-grey-5);
     font-size: 0.75rem;
