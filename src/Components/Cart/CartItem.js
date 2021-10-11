@@ -52,19 +52,20 @@ const CartItem = ({ id, image, name, color, price, amount }) => {
 };
 
 const Wrapper = styled.article`
+  display: grid;
+  grid-template-columns: 200px auto auto;
+  grid-template-rows: 75px;
+  gap: 3rem 1rem;
+  justify-items: center;
+  margin-bottom: 5rem;
+  align-items: center;
+  border-bottom: 1px solid black;
   .subtotal {
     display: none;
   }
   .price {
     display: none;
   }
-  display: grid;
-  grid-template-columns: 200px auto auto;
-  grid-template-rows: 75px;
-  gap: 3rem 1rem;
-  justify-items: center;
-  margin-bottom: 3rem;
-  align-items: center;
   .title {
     height: 100%;
     display: grid;
@@ -77,17 +78,25 @@ const Wrapper = styled.article`
     width: 100%;
     height: 100%;
     display: block;
-    border-radius: var(--radius);
     object-fit: cover;
   }
   h5 {
-    font-size: 0.75rem;
+    font-family: var(--FontWork);
+    font-weight: 300;
+    font-size: 0.85rem;
+    text-transform: capitalize;
     margin-bottom: 0;
   }
+  .name {
+    letter-spacing: 1px;
+    color: var(--ColorBlack);
+    font-weight: 400;
+  }
   .color {
-    color: var(--clr-grey-5);
-    font-size: 0.75rem;
-    letter-spacing: var(--spacing);
+    color: var(--ColorBlack-85);
+    font-family: var(--FontWork);
+    font-weight: 300;
+    font-size: 0.85rem;
     text-transform: capitalize;
     margin-bottom: 0;
     display: flex;
@@ -95,15 +104,18 @@ const Wrapper = styled.article`
     justify-content: flex-start;
     span {
       display: inline-block;
-      width: 0.5rem;
-      height: 0.5rem;
+      width: 0.7rem;
+      height: 0.7rem;
       background: red;
       margin-left: 0.5rem;
-      border-radius: var(--radius);
+      border-radius: 50%;
     }
   }
   .price-small {
-    color: var(--clr-primary-5);
+    color: var(--ColorSemiCrimson);
+    font-family: var(--FontWork);
+    letter-spacing: 1px;
+    font-weight: 400;
   }
   .amount-btns {
     width: 75px;
