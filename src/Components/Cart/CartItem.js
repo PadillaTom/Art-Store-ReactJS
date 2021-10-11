@@ -29,8 +29,10 @@ const CartItem = ({ id, image, name, color, price, amount }) => {
           <h5 className="price-small">{formatPrice(price)}</h5>
         </div>
       </div>
+
       <h5 className="price">{formatPrice(price)}</h5>
       <AmountButtons
+        className="amount-btns"
         amount={amount}
         increase={increase}
         decrease={decrease}
@@ -50,27 +52,34 @@ const CartItem = ({ id, image, name, color, price, amount }) => {
 };
 
 const Wrapper = styled.article`
-  img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-  }
-  .title {
-    grid-template-rows: 75px;
-    display: grid;
-    grid-template-columns: 75px 125px;
-    align-items: center;
-    text-align: left;
-    gap: 1rem;
-  }
   .subtotal {
     display: none;
   }
   .price {
     display: none;
   }
-
+  display: grid;
+  grid-template-columns: 200px auto auto;
+  grid-template-rows: 75px;
+  gap: 3rem 1rem;
+  justify-items: center;
+  margin-bottom: 3rem;
+  align-items: center;
+  .title {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 75px 125px;
+    align-items: center;
+    text-align: left;
+    gap: 1rem;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: var(--radius);
+    object-fit: cover;
+  }
   h5 {
     font-size: 0.75rem;
     margin-bottom: 0;
@@ -88,6 +97,7 @@ const Wrapper = styled.article`
       display: inline-block;
       width: 0.5rem;
       height: 0.5rem;
+      background: red;
       margin-left: 0.5rem;
       border-radius: var(--radius);
     }
