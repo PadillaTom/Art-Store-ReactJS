@@ -22,6 +22,7 @@ const SingleProductPage = () => {
   // Fetch
   useEffect(() => {
     fetchSingleProduct(`${single_product_url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
 
   // Redirect on Error
@@ -31,6 +32,7 @@ const SingleProductPage = () => {
         history.push("/");
       }, 3000);
     }
+    // eslint-disable-next-line
   }, [error]);
 
   // RENDER:

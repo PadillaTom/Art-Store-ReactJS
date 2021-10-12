@@ -23,7 +23,7 @@ const AboutPage = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const { width, height } = windowDimensions;
+  const { width } = windowDimensions;
   let isDesk = false;
   if (width >= 1150) {
     isDesk = true;
