@@ -8,9 +8,11 @@ import { UserButtons } from "../Navigation";
 import { Logotype } from "../Logotype";
 
 import { useProductsContext } from "../../Context/products_context";
+import { useUserContext } from "../../Context/user_context";
 
 const Nav = () => {
   const { openSidebar } = useProductsContext();
+  const { myUser } = useUserContext();
   return (
     <NavContainer>
       <div className="nav-center">
@@ -29,6 +31,11 @@ const Nav = () => {
               </li>
             );
           })}
+          {myUser && (
+            <li>
+              <Link to="/checkout">checkout</Link>
+            </li>
+          )}
         </ul>
         <UserButtons></UserButtons>
       </div>

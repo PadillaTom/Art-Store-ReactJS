@@ -10,6 +10,7 @@ import {
   HomePage,
   ProductsPage,
   SingleProductPage,
+  PrivateRoute,
 } from "../../Pages";
 import { ScrollToTop } from "../Utils";
 
@@ -35,9 +36,9 @@ function App() {
         <Route path="/products/:id">
           <SingleProductPage></SingleProductPage>
         </Route>
-        <Route path="/checkout">
+        <PrivateRoute exact path="/checkout">
           <CheckoutPage></CheckoutPage>
-        </Route>
+        </PrivateRoute>
         <Route path="*">
           <ErrorPage></ErrorPage>
         </Route>

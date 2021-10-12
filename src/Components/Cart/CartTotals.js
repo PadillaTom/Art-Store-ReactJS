@@ -1,12 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { formatPrice } from "../../Utils/helpers";
 import { useCartContext } from "../../Context/cart_context";
-import { Link } from "react-router-dom";
+import { useUserContext } from "../../Context/user_context";
 
 const CartTotals = () => {
   const { total_amount, shipping_fee } = useCartContext();
+  const { myUser, loginWithRedirect } = useUserContext();
   return (
     <Wrapper>
       <article>
@@ -21,9 +23,15 @@ const CartTotals = () => {
           Order Total: <span>{formatPrice(total_amount + shipping_fee)}</span>
         </h4>
       </article>
-      <Link to="/checkout" className="checkout-btn">
-        Checkout
-      </Link>
+      {myUser ? (
+        <Link to="/checkout" className="checkout-btn">
+          Checkout
+        </Link>
+      ) : (
+        <button className="checkout-btn" onClick={loginWithRedirect}>
+          Login
+        </button>
+      )}
     </Wrapper>
   );
 };
@@ -69,6 +77,7 @@ const Wrapper = styled.section`
     padding: 0.5rem 0.7rem;
     transition: var(--MainTransition);
     border: 1px solid var(--ColorWhite);
+    cursor: pointer;
   }
   .checkout-btn:hover {
     color: var(--ColorBlack);
