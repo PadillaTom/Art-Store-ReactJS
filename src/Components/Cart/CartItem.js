@@ -29,7 +29,6 @@ const CartItem = ({ id, image, name, color, price, amount }) => {
           <h5 className="price-small">{formatPrice(price)}</h5>
         </div>
       </div>
-
       <h5 className="price">{formatPrice(price)}</h5>
       <AmountButtons
         className="amount-btns"
@@ -52,14 +51,12 @@ const CartItem = ({ id, image, name, color, price, amount }) => {
 };
 
 const Wrapper = styled.article`
+  height: 6rem;
   display: grid;
   grid-template-columns: 200px auto auto;
-  grid-template-rows: 75px;
-  gap: 3rem 1rem;
   justify-items: center;
-  margin-bottom: 5rem;
   align-items: center;
-  border-bottom: 1px solid black;
+  margin-bottom: 2.5rem;
   .subtotal {
     display: none;
   }
@@ -67,6 +64,7 @@ const Wrapper = styled.article`
     display: none;
   }
   .title {
+    width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: 75px 125px;
@@ -76,14 +74,13 @@ const Wrapper = styled.article`
   }
   img {
     width: 100%;
-    height: 100%;
-    display: block;
+    height: 6rem;
     object-fit: cover;
   }
   h5 {
     font-family: var(--FontWork);
     font-weight: 300;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     text-transform: capitalize;
     margin-bottom: 0;
   }
@@ -93,19 +90,19 @@ const Wrapper = styled.article`
     font-weight: 400;
   }
   .color {
+    padding: 0.2rem 0rem;
     color: var(--ColorBlack-85);
     font-family: var(--FontWork);
     font-weight: 300;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     text-transform: capitalize;
-    margin-bottom: 0;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     span {
       display: inline-block;
-      width: 0.7rem;
-      height: 0.7rem;
+      width: 0.45rem;
+      height: 0.45rem;
       background: red;
       margin-left: 0.5rem;
       border-radius: 50%;
@@ -116,65 +113,65 @@ const Wrapper = styled.article`
     font-family: var(--FontWork);
     letter-spacing: 1px;
     font-weight: 400;
+    font-size: 0.8rem;
   }
   .amount-btns {
-    width: 75px;
+    width: auto;
     button {
-      width: 1rem;
-      height: 0.5rem;
-      font-size: 0.75rem;
+      width: 1.5rem;
+      height: 1rem;
+      font-size: 0.7rem;
     }
     h2 {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   }
   .remove-btn {
-    color: var(--clr-white);
+    color: var(--ColorBlack-85);
     background: transparent;
     border: transparent;
-    letter-spacing: var(--spacing);
-    background: var(--clr-red-dark);
-    width: 1.5rem;
-    height: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--radius);
-    font-size: 0.75rem;
+    width: auto;
+    height: 4rem;
+    font-size: 0.85rem;
     cursor: pointer;
   }
-  @media (min-width: 776px) {
-    .subtotal {
-      display: block;
-      margin-bottom: 0;
-      color: var(--clr-grey-5);
-      font-weight: 400;
-      font-size: 1rem;
-    }
+  @media (min-width: 768px) {
+    grid-template-columns: 316px 1fr 1fr 1fr 3rem;
+    height: 10rem;
     .price-small {
       display: none;
     }
+    .subtotal {
+      display: block;
+      color: var(--ColorSemiCrimson);
+      font-family: var(--FontWork);
+      letter-spacing: 1px;
+      font-weight: 400;
+      font-size: 1rem;
+    }
     .price {
       display: block;
-      font-size: 1rem;
-      color: var(--clr-primary-5);
+      color: var(--ColorBlack-85);
+      font-family: var(--FontWork);
+      letter-spacing: 1px;
       font-weight: 400;
+      font-size: 0.9rem;
     }
     .name {
-      font-size: 0.85rem;
+      font-size: 1.5rem;
+      font-weight: 300;
     }
     .color {
-      font-size: 0.85rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.7px;
       span {
         width: 0.75rem;
         height: 0.75rem;
       }
     }
-    grid-template-columns: 1fr 1fr 1fr 1fr auto;
-    align-items: center;
-    grid-template-rows: 75px;
+
     img {
-      height: 100%;
+      height: 10rem;
     }
     .title {
       height: 100%;
@@ -194,6 +191,26 @@ const Wrapper = styled.article`
       h2 {
         font-size: 1.5rem;
       }
+    }
+  }
+  @media (min-width: 980px) {
+    height: 12rem;
+    .title {
+      grid-template-columns: 160px auto;
+      gap: 1.5rem;
+    }
+    img {
+      width: 100%;
+      height: 12rem;
+    }
+    .price {
+      font-size: 1.2rem;
+    }
+    .subtotal {
+      font-size: 1.2rem;
+    }
+    .remove-btn {
+      font-size: 1.3rem;
     }
   }
 `;

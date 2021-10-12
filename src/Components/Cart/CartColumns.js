@@ -19,17 +19,17 @@ const CartColumns = () => {
 const Wrapper = styled.div`
   display: none;
   @media (min-width: 768px) {
-    padding-top: 3rem;
+    padding-top: 2rem;
     display: block;
     .content {
       display: grid;
-      grid-template-columns: 316px 1fr 1fr 1fr auto;
+      grid-template-columns: 316px 1fr 1fr 1fr 3rem;
       justify-items: center;
       column-gap: 1rem;
       h5 {
         color: var(--ColorBlack-85);
         font-family: var(--FontWork);
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-weight: 400;
         letter-spacing: 0.9px;
       }
@@ -39,12 +39,12 @@ const Wrapper = styled.div`
       height: 2rem;
     }
     hr {
-      margin-top: 1rem;
+      margin-top: 0.75rem;
       margin-bottom: 3rem;
     }
   }
   @media (min-width: 980px) {
-    padding-top: 11rem;
+    padding-top: 4rem;
     .content h5 {
       font-size: 1.2rem;
     }

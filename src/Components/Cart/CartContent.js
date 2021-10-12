@@ -6,9 +6,10 @@ import { CartColumns, CartItem, CartTotals } from "./";
 import { useCartContext } from "../../Context/cart_context";
 
 const CartContent = () => {
-  const { cart, clearCart } = useCartContext();
+  const { cart, clearCart, total_items } = useCartContext();
   return (
-    <Wrapper className="section-center">
+    <Wrapper>
+      <h3>You have {total_items} items on your Cart</h3>
       <CartColumns />
       {cart.map((cartItem) => {
         return <CartItem key={cartItem.id} {...cartItem}></CartItem>;
@@ -27,7 +28,20 @@ const CartContent = () => {
   );
 };
 const Wrapper = styled.section`
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 2rem;
   min-height: calc(100vh - 10rem);
+  h3 {
+    width: 90%;
+    margin: 0 auto;
+    font-family: var(--FontWork);
+    letter-spacing: 2px;
+    font-size: 2rem;
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 2.3rem;
+  }
   .link-container {
     display: flex;
     justify-content: space-between;
@@ -72,6 +86,7 @@ const Wrapper = styled.section`
   }
 
   @media (min-width: 768px) {
+    padding-top: 2rem;
     min-height: calc(100vh - 11.3rem);
     .link-container {
       width: 80%;
@@ -80,6 +95,13 @@ const Wrapper = styled.section`
   @media (min-width: 950px) {
     .link-container > * {
       font-size: 1.1rem;
+    }
+  }
+  @media (min-width: 964px) {
+    padding-top: 10rem;
+    h3 {
+      font-size: 2.6rem;
+      letter-spacing: 3px;
     }
   }
   @media (min-width: 980px) {

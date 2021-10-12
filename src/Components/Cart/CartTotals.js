@@ -34,7 +34,7 @@ const Wrapper = styled.section`
   place-items: center;
   article {
     border: 1px solid var(--ColorBlack-35);
-    padding: 2rem 3rem;
+    padding: 2rem 2.2rem;
     margin-bottom: 2rem;
   }
   h4,
