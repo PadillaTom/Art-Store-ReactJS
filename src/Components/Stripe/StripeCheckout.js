@@ -89,7 +89,7 @@ const CheckoutForm = () => {
       setTimeout(() => {
         clearCart();
         history.push("/");
-      }, 5000);
+      }, 10000);
     }
   };
 
@@ -101,14 +101,15 @@ const CheckoutForm = () => {
       {succeeded ? (
         <article>
           <h4>Thank you,</h4>
-          <h4>Your payment was successful.</h4>
-          <h4>Redirecting to homepage</h4>
+          <h4>Your payment was successful!</h4>
+          <h4>Redirecting to Homepage in 10 seconds...</h4>
         </article>
       ) : (
         <article>
           <h4>Hello, {myUser && myUser.name}</h4>
           <p>Your Total is {formatPrice(shipping_fee + total_amount)}</p>
           <p>* Test Card Number: 4242 4242 4242 4242 (Default US)*</p>
+          <p>CVC: Any 3 digits</p>
         </article>
       )}
       <form onSubmit={handleSubmit} id="payment-form">
