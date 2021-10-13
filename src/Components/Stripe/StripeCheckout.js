@@ -99,17 +99,22 @@ const CheckoutForm = () => {
   return (
     <div>
       {succeeded ? (
-        <article>
+        <article className="article-success">
           <h4>Thank you,</h4>
           <h4>Your payment was successful!</h4>
-          <h4>Redirecting to Homepage in 10 seconds...</h4>
+          <h4>Redirecting to homepage in 10 seconds...</h4>
         </article>
       ) : (
-        <article>
+        <article className="article-pre-payment">
           <h4>Hello, {myUser && myUser.name}</h4>
-          <p>Your Total is {formatPrice(shipping_fee + total_amount)}</p>
-          <p>* Test Card Number: 4242 4242 4242 4242 (Default US)*</p>
-          <p>CVC: Any 3 digits</p>
+          <h3>
+            Your Total is{" "}
+            <span>{formatPrice(shipping_fee + total_amount)}</span>
+          </h3>
+          <p>
+            Test Card Number: 4242 4242 4242 4242 (Default US) <br /> CVC: Any 3
+            digits{" "}
+          </p>
         </article>
       )}
       <form onSubmit={handleSubmit} id="payment-form">
@@ -133,12 +138,7 @@ const CheckoutForm = () => {
 
         {/* Show SUCCESS when COMPLETED Payment */}
         <p className={succeeded ? "result-message" : "result-message hidden"}>
-          Payment Succeeded, see result: {""}
-          <a href={`https://dashboard.stripe.com/test/payments`}>
-            Stripe Dashboard
-          </a>
-          <br />
-          Refresh to Pay Again.
+          Payment Succeeded!
         </p>
       </form>
     </div>
@@ -156,14 +156,17 @@ const StripeCheckout = () => {
 };
 
 const Wrapper = styled.section`
+  width: 96vw;
+  margin: 0 auto;
   form {
     width: 90vw;
+    margin: 0 auto;
     align-self: center;
     box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
       0px 2px 5px 0px rgba(50, 50, 93, 0.1),
       0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
     border-radius: 7px;
-    padding: 40px;
+    padding: 2.7rem;
   }
   input {
     border-radius: 6px;
@@ -176,25 +179,73 @@ const Wrapper = styled.section`
     background: white;
     box-sizing: border-box;
   }
+  .article-pre-payment {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: var(--FontWork);
+    margin-bottom: 1rem;
+    color: var(--ColorBlack-85);
+    h4 {
+      letter-spacing: 1.2px;
+      font-weight: 300;
+      font-size: 1.3rem;
+    }
+    h3 {
+      letter-spacing: 1px;
+      font-weight: 300;
+      font-size: 1.3rem;
+      span {
+        color: var(--ColorSemiCrimson);
+        font-size: 1.6rem;
+      }
+    }
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--ColorBlack-7);
+      letter-spacing: 0.55px;
+    }
+  }
+  .article-success {
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: var(--FontWork);
+    margin-bottom: 1rem;
+    color: var(--ColorBlack-85);
+    h4 {
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      font-weight: 300;
+    }
+  }
   .result-message {
-    line-height: 22px;
-    font-size: 16px;
+    font-family: var(--FontWork);
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 0.7px;
+    margin-top: 1rem;
   }
-  .result-message a {
-    color: rgb(89, 111, 214);
-    font-weight: 600;
-    text-decoration: none;
-  }
+
   .hidden {
     display: none;
   }
   #card-error {
-    color: rgb(105, 115, 134);
-    font-size: 16px;
-    line-height: 20px;
-    margin-top: 12px;
-    text-align: center;
+    font-family: var(--FontWork);
+    color: var(--ColorSemiCrimson);
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 0.7px;
+    margin-top: 1rem;
   }
+
   #card-element {
     border-radius: 4px 4px 0 0;
     padding: 12px;
@@ -204,8 +255,9 @@ const Wrapper = styled.section`
     background: white;
     box-sizing: border-box;
   }
+
   #payment-request-button {
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
   }
   /* Buttons and links */
   button {
