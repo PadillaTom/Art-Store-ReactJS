@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 const CheckoutPage = () => {
-  return <h4>checkout page</h4>;
+  return <Wrapper>checkout page</Wrapper>;
 };
 const Wrapper = styled.div``;
 export default CheckoutPage;
