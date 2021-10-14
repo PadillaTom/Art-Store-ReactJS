@@ -67,10 +67,12 @@ const CheckoutForm = () => {
     createPaymentIntent();
     // eslint-disable-next-line
   }, []);
+
   const handleChange = async (event) => {
     setDisabled(event.empty);
     setError(event.error ? event.error.message : "");
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);
@@ -80,7 +82,7 @@ const CheckoutForm = () => {
       },
     });
     if (payload.error) {
-      setError(`Payment Failed ${payload.error.message}`);
+      setError(`${payload.error.message}`);
       setProcessing(false);
     } else {
       setError(null);
@@ -101,7 +103,9 @@ const CheckoutForm = () => {
       {succeeded ? (
         <article className="article-success">
           <h4>Thank you,</h4>
-          <h4>Your payment was successful!</h4>
+          <h4>
+            Your payment was <span>successful!</span>{" "}
+          </h4>
           <h4>Redirecting to homepage in 10 seconds...</h4>
         </article>
       ) : (
@@ -132,7 +136,7 @@ const CheckoutForm = () => {
         {/* Show ERROR when PROCESSING Payment */}
         {error && (
           <div className="card-error" role="alert">
-            {error}
+            Payment Error: <br /> <span>{error}</span>
           </div>
         )}
 
@@ -166,7 +170,7 @@ const Wrapper = styled.section`
       0px 2px 5px 0px rgba(50, 50, 93, 0.1),
       0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
     border-radius: 7px;
-    padding: 2.7rem;
+    padding: 2.1rem;
   }
   input {
     border-radius: 6px;
@@ -204,10 +208,12 @@ const Wrapper = styled.section`
       }
     }
     p {
-      font-size: 1rem;
+      width: 90%;
+      font-size: 0.9rem;
       font-weight: 300;
       color: var(--ColorBlack-7);
       letter-spacing: 0.55px;
+      margin-bottom: -0.5rem;
     }
   }
   .article-success {
@@ -224,26 +230,34 @@ const Wrapper = styled.section`
       font-size: 1.2rem;
       letter-spacing: 1px;
       font-weight: 300;
+      span {
+        color: var(--ColorSemiCrimson);
+        font-weight: 400;
+      }
     }
+  }
+  .hidden {
+    display: none;
   }
   .result-message {
     font-family: var(--FontWork);
     font-size: 1.3rem;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.7px;
     margin-top: 1rem;
+    color: green;
   }
-
-  .hidden {
-    display: none;
-  }
-  #card-error {
+  .card-error {
     font-family: var(--FontWork);
-    color: var(--ColorSemiCrimson);
-    font-size: 1.3rem;
+    color: var(--ColorBlack-85);
+    font-size: 1rem;
     font-weight: 300;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.5px;
     margin-top: 1rem;
+    span {
+      font-size: 0.85rem;
+      color: var(--ColorSemiCrimson);
+    }
   }
 
   #card-element {
