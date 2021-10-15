@@ -231,8 +231,9 @@ const Wrapper = styled.section`
       letter-spacing: 1px;
       font-weight: 300;
       span {
-        color: var(--ColorSemiCrimson);
+        color: green;
         font-weight: 400;
+        text-transform: capitalize;
       }
     }
   }
@@ -354,9 +355,10 @@ const Wrapper = styled.section`
       transform: rotate(360deg);
     }
   }
-  @media only screen and (max-width: 600px) {
+
+  @media (min-width: 768px) {
     form {
-      width: 80vw;
+      width: 65vw;
     }
   }
 `;
