@@ -9,7 +9,7 @@ const Loading = () => {
 
 const LoadingContainer = styled.div`
   width: 90%;
-  height: 20vh;
+  height: calc(100vh - 10rem);
   display: grid;
   place-items: center;
   font-family: var(--FontWork);
@@ -17,6 +17,13 @@ const LoadingContainer = styled.div`
   font-size: 3.2rem;
   font-weight: 300;
   letter-spacing: 1.1px;
+  @media (min-width: 768px) {
+    height: calc(100vh - 11.3rem);
+  }
+  @media (min-width: 980px) {
+    margin-top: 5.5rem;
+    height: calc(100vh - 11.5rem);
+  }
 `;
 
 export default Loading;

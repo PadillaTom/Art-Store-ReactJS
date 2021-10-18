@@ -260,7 +260,6 @@ const Wrapper = styled.section`
       color: var(--ColorSemiCrimson);
     }
   }
-
   #card-element {
     border-radius: 4px 4px 0 0;
     padding: 12px;
@@ -270,11 +269,11 @@ const Wrapper = styled.section`
     background: white;
     box-sizing: border-box;
   }
-
   #payment-request-button {
     margin-bottom: 2rem;
   }
-  /* Buttons and links */
+
+  /* Buttons */
   button {
     background: #5469d4;
     font-family: Arial, sans-serif;
@@ -297,7 +296,7 @@ const Wrapper = styled.section`
     opacity: 0.5;
     cursor: default;
   }
-  /* spinner/processing state, errors */
+  /* Spinner */
   .spinner,
   .spinner:before,
   .spinner:after {
@@ -356,9 +355,83 @@ const Wrapper = styled.section`
     }
   }
 
+  /* Queries */
   @media (min-width: 768px) {
     form {
       width: 65vw;
+    }
+    input {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+    .article-pre-payment {
+      height: 10rem;
+      margin-bottom: 2.3rem;
+      h4 {
+        font-size: 1.8rem;
+      }
+      h3 {
+        font-size: 1.7rem;
+        span {
+          font-size: 2rem;
+        }
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+    .article-success {
+      h4 {
+        font-size: 1.45rem;
+      }
+    }
+    .result-message {
+      letter-spacing: 1px;
+    }
+    .card-error {
+      font-size: 1.2rem;
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+  @media (min-width: 980px) {
+    form {
+      width: 65vw;
+    }
+    input {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+    .article-pre-payment {
+      margin-bottom: 5rem;
+      h4 {
+        font-size: 2rem;
+      }
+      h3 {
+        font-size: 1.9rem;
+        span {
+          font-size: 2.2rem;
+        }
+      }
+      p {
+        font-size: 1.4rem;
+      }
+    }
+    .article-success {
+      margin-bottom: 4.5rem;
+      h4 {
+        font-size: 1.8rem;
+      }
+    }
+    .result-message {
+      letter-spacing: 2px;
+    }
+    .card-error {
+      font-size: 1.5rem;
+      span {
+        font-size: 1.2rem;
+      }
     }
   }
 `;
