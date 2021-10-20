@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { OpacityOneWhenVisible } from "../../Animations";
 
 const ProductImages = ({ images = [{ url: "" }] }) => {
   const [mainImg, setMainImg] = useState(images[0]);
@@ -7,18 +8,21 @@ const ProductImages = ({ images = [{ url: "" }] }) => {
   return (
     <ImagesDisplayContainer>
       <img src={mainImg.url} alt="Displayed" className="mainImg" />
+
       <div className="gallery">
         {images.map((img, index) => {
           return (
-            <img
-              src={img.url}
-              alt={img.filename}
-              key={index}
-              onClick={() => {
-                setMainImg(images[index]);
-              }}
-              className={`${img.url === mainImg.url ? "active" : null}`}
-            />
+            <OpacityOneWhenVisible setDuration={0.7} setDelay={0.45}>
+              <img
+                src={img.url}
+                alt={img.filename}
+                key={index}
+                onClick={() => {
+                  setMainImg(images[index]);
+                }}
+                className={`${img.url === mainImg.url ? "active" : null}`}
+              />
+            </OpacityOneWhenVisible>
           );
         })}
       </div>

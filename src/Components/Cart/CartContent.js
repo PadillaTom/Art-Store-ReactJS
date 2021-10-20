@@ -5,14 +5,22 @@ import styled from "styled-components";
 import { CartColumns, CartItem, CartTotals } from "./";
 import { useCartContext } from "../../Context/cart_context";
 
+import { OpXWhenVisible, OpYWhenVisible } from "../../Animations";
+
 const CartContent = () => {
   const { cart, clearCart, total_items } = useCartContext();
   return (
     <Wrapper>
-      <h3>You have {total_items} items on your Cart</h3>
+      <OpYWhenVisible setDelay={0.2} setDuration={0.4}>
+        <h3>You have {total_items} items on your Cart</h3>
+      </OpYWhenVisible>
       <CartColumns />
       {cart.map((cartItem) => {
-        return <CartItem key={cartItem.id} {...cartItem}></CartItem>;
+        return (
+          <OpXWhenVisible setDuration={0.15} setDelay={0.1} setXAxis={"-5%"}>
+            <CartItem key={cartItem.id} {...cartItem}></CartItem>
+          </OpXWhenVisible>
+        );
       })}
       <hr />
       <div className="link-container">

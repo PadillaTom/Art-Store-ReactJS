@@ -3,10 +3,9 @@
 /* ======================================================================== */
 export const transitions = {
   homeText: {
-    duration: 0.8,
-    type: "spring",
-    delay: 0.35,
-    damping: 15,
+    duration: 0.85,
+    type: "tween",
+    delay: 0.15,
   },
 };
 
@@ -15,7 +14,7 @@ export const transitions = {
 /* ======================================================================== */
 // Hero Text:
 export const varsHomeText = {
-  from: { x: "-50%", y: "-52%", opacity: 0 },
+  from: { x: "-50%", y: "-60%", opacity: 0 },
   to: { x: "-50%", y: "-50%", opacity: 1 },
 };
 

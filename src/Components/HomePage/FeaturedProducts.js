@@ -6,7 +6,7 @@ import { ProductCard } from "../SingleProduct";
 
 import { useProductsContext } from "../../Context/products_context";
 
-import { OpacityOneWhenVisible } from "../../Animations";
+import { OpacityOneWhenVisible, OpYWhenVisible } from "../../Animations";
 
 const FeaturedProducts = () => {
   // *** Get Products ***
@@ -24,16 +24,24 @@ const FeaturedProducts = () => {
   }
   return (
     <FeaturedProductsContainer>
-      <OpacityOneWhenVisible>
+      <OpYWhenVisible setDuration={0.45} setDelay={0.2}>
         <div className="fp-titleContainer">
           <h3>Featured Products</h3>
           <h1>Lifestyle</h1>
         </div>
-      </OpacityOneWhenVisible>
+      </OpYWhenVisible>
 
       <div className="section-center featured">
         {featuredProds.map((featured) => {
-          return <ProductCard key={featured.id} {...featured}></ProductCard>;
+          return (
+            <OpYWhenVisible
+              setDuration={0.25}
+              setDelay={0.05}
+              key={featured.id}
+            >
+              <ProductCard {...featured}></ProductCard>
+            </OpYWhenVisible>
+          );
         })}
       </div>
     </FeaturedProductsContainer>

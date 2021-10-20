@@ -2,13 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 import { GridCard } from "../SingleProduct";
+import { OpYWhenVisible } from "../../Animations";
 
 const GridView = ({ products }) => {
   return (
     <Wrapper>
       <div className="products-container">
         {products.map((product) => {
-          return <GridCard key={product.id} product={product}></GridCard>;
+          return (
+            <OpYWhenVisible key={product.id} setDuration={0.35} setDelay={0.1}>
+              <GridCard product={product}></GridCard>
+            </OpYWhenVisible>
+          );
         })}
       </div>
     </Wrapper>

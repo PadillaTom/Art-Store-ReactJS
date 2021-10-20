@@ -56,14 +56,14 @@ const Wrapper = styled.article`
     cursor: pointer;
     font-family: var(--FontWork);
     font-size: 1rem;
-    letter-spacing: 1.2px;
-    font-weight: 300;
+    letter-spacing: 2px;
+    font-weight: 400;
     text-transform: uppercase;
-    color: var(--ColorBlack);
+    color: var(--ColorSemiCrimson);
     transition: var(--MainTransition);
   }
   .listCard-btn:hover {
-    color: var(--ColorSemiCrimson);
+    color: red;
   }
   @media (min-width: 992px) {
     display: grid;

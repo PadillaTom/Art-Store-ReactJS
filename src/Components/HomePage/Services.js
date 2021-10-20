@@ -23,7 +23,7 @@ const Services = () => {
           {services.map((singleService) => {
             const { id, icon, title, text } = singleService;
             return (
-              <OpYWhenVisible key={id}>
+              <OpYWhenVisible key={id} setDuration={0.5}>
                 <article className="service">
                   <span className="icon">{icon}</span>
                   <h4>{title}</h4>

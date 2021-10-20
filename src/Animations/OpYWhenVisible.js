@@ -2,7 +2,14 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const OpYWhenVisible = ({ children }) => {
+const OpYWhenVisible = ({
+  children,
+  setDelay,
+  setDuration,
+  setYAxis,
+  setType,
+  setDamping,
+}) => {
   const controls = useAnimation();
   const { ref, inView } = useInView();
 
@@ -17,9 +24,14 @@ const OpYWhenVisible = ({ children }) => {
       ref={ref}
       animate={controls}
       initial="from"
-      transition={{ duration: 1, delay: 0.3, type: "tween", damping: 15 }}
+      transition={{
+        duration: !setDuration ? 0.75 : setDuration,
+        delay: !setDelay ? 0.3 : setDelay,
+        type: !setType ? "tween" : setType,
+        damping: !setDamping ? 15 : setDamping,
+      }}
       variants={{
-        from: { opacity: 0, y: "4%" },
+        from: { opacity: 0, y: `${!setYAxis ? "8%" : setYAxis}` },
         to: { opacity: 1, y: "0%" },
       }}
     >

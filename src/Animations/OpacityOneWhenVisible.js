@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const OpacityOneWhenVisible = ({ children }) => {
+const OpacityOneWhenVisible = ({ children, setDuration, setDelay }) => {
   const controls = useAnimation();
   const { ref, inView } = useInView();
 
@@ -17,7 +17,12 @@ const OpacityOneWhenVisible = ({ children }) => {
       ref={ref}
       animate={controls}
       initial="from"
-      transition={{ duration: 0.95, delay: 0.12, type: "tween", damping: 25 }}
+      transition={{
+        duration: !setDuration ? 0.5 : setDuration,
+        delay: !setDelay ? 0.12 : setDelay,
+        type: "tween",
+        damping: 25,
+      }}
       variants={{
         from: { opacity: 0 },
         to: { opacity: 1 },

@@ -10,6 +10,9 @@ import { ProductImages, Stars, AddToCart } from "../Components/SingleProduct";
 
 import { useProductsContext } from "../Context/products_context";
 
+import { OpacityOneWhenVisible, OpYWhenVisible } from "../Animations";
+import OpXWhenVisible from "../Animations/OpXWhenVisible";
+
 const SingleProductPage = () => {
   const { id } = useParams();
   const history = useHistory();
@@ -55,25 +58,37 @@ const SingleProductPage = () => {
   } = product;
   return (
     <SingleProductContainer>
-      <Link className="btn-back" to="/products">
-        Back to Products
-      </Link>
+      <OpYWhenVisible
+        setDelay={0.7}
+        setDuration={0.5}
+        setType={"spring"}
+        setDamping={10}
+        setYAxis={"5%"}
+      >
+        <Link className="btn-back" to="/products">
+          Back to Products
+        </Link>
+      </OpYWhenVisible>
       <div className="section section-center">
         <div className="product-center">
-          <ProductImages images={images}></ProductImages>
+          <OpacityOneWhenVisible>
+            <ProductImages images={images}></ProductImages>
+          </OpacityOneWhenVisible>
           <section className="content">
-            <h2>{name}</h2>
-            <Stars stars={stars} reviews={reviews}></Stars>
-            <h5 className="price">{formatPrice(price)}</h5>
-            <p className="desc">{description}</p>
-            <p className="info">
-              <span>Available: </span>
-              {stock > 0 ? "In Stock" : "Out Of Stock"}
-              <span>SKU: </span>
-              {sku}
-              <span>Brand: </span>
-              {company}
-            </p>
+            <OpXWhenVisible setXAxis={"3%"}>
+              <h2>{name}</h2>
+              <Stars stars={stars} reviews={reviews}></Stars>
+              <h5 className="price">{formatPrice(price)}</h5>
+              <p className="desc">{description}</p>
+              <p className="info">
+                <span>Available: </span>
+                {stock > 0 ? "In Stock" : "Out Of Stock"}
+                <span>SKU: </span>
+                {sku}
+                <span>Brand: </span>
+                {company}
+              </p>
+            </OpXWhenVisible>
             <hr />
             {stock > 0 && <AddToCart product={product}></AddToCart>}
           </section>

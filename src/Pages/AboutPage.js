@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import aboutUs from "../Assets/aboutUs.jpeg";
 
+import { OpacityOneWhenVisible, OpYWhenVisible } from "../Animations";
+
 const AboutPage = () => {
   // Window Width:
   const [windowDimensions, setWindowDimensions] = useState(
@@ -34,18 +36,23 @@ const AboutPage = () => {
     <AboutContainer
       className={isDesk ? "page-height100-desk" : ".page-height100-mobile"}
     >
-      <div className="description">
-        <h1>About Us</h1>
-        <h2>
-          Style <br />&<br /> Design
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque non
-          debitis aliquam inventore repellat quisquam. Non voluptas molestiae
-          accusamus vitae!
-        </p>
-      </div>
-      <img src={aboutUs} alt="About Us"></img>
+      <OpacityOneWhenVisible setDuration={0.35}>
+        <div className="description">
+          <h1>About Us</h1>
+          <h2>
+            Style <br />&<br /> Design
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque non
+            debitis aliquam inventore repellat quisquam. Non voluptas molestiae
+            accusamus vitae!
+          </p>
+        </div>
+      </OpacityOneWhenVisible>
+
+      <OpYWhenVisible setDelay={0.25} setDuration={0.4}>
+        <img src={aboutUs} alt="About Us"></img>
+      </OpYWhenVisible>
     </AboutContainer>
   );
 };

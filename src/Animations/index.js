@@ -1,3 +1,4 @@
 import OpacityOneWhenVisible from "./OpacityOneWhenVisible";
 import OpYWhenVisible from "./OpYWhenVisible";
-export { OpacityOneWhenVisible, OpYWhenVisible };
+import OpXWhenVisible from "./OpXWhenVisible";
+export { OpacityOneWhenVisible, OpYWhenVisible, OpXWhenVisible };
