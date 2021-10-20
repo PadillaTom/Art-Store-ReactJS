@@ -2,29 +2,34 @@ import React from "react";
 import styled from "styled-components";
 
 import { services } from "../../Utils/constants";
+import { OpYWhenVisible, OpacityOneWhenVisible } from "../../Animations";
 
 const Services = () => {
   return (
     <ServicesContainer>
       <div className="section-center">
-        <article className="header">
-          <h3>Custom Furniture</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            officia iure, nemo quae laboriosam, vel amet delectus pariatur modi
-            sit repudiandae, cum eveniet iste accusamus optio a nam temporibus
-            eos.
-          </p>
-        </article>
+        <OpacityOneWhenVisible>
+          <article className="header">
+            <h3>Custom Furniture</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Explicabo officia iure, nemo quae laboriosam, vel amet delectus
+              pariatur modi sit repudiandae, cum eveniet iste accusamus optio a
+              nam temporibus eos.
+            </p>
+          </article>
+        </OpacityOneWhenVisible>
         <div className="services-center">
           {services.map((singleService) => {
             const { id, icon, title, text } = singleService;
             return (
-              <article className="service" key={id}>
-                <span className="icon">{icon}</span>
-                <h4>{title}</h4>
-                <p>{text}</p>
-              </article>
+              <OpYWhenVisible key={id}>
+                <article className="service">
+                  <span className="icon">{icon}</span>
+                  <h4>{title}</h4>
+                  <p>{text}</p>
+                </article>
+              </OpYWhenVisible>
             );
           })}
         </div>

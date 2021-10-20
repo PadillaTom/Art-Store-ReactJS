@@ -29,11 +29,17 @@ const UserButtons = () => {
             clearCart();
             logout({ returnTo: window.location.origin });
           }}
+          style={{ color: "crimson" }}
         >
           Logout <FaUserMinus></FaUserMinus>
         </button>
       ) : (
-        <button className="auth-btn" type="button" onClick={loginWithRedirect}>
+        <button
+          className="auth-btn"
+          type="button"
+          onClick={loginWithRedirect}
+          style={{ color: "black" }}
+        >
           Login <FaUserPlus></FaUserPlus>
         </button>
       )}

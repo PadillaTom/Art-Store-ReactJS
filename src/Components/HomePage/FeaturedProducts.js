@@ -6,6 +6,8 @@ import { ProductCard } from "../SingleProduct";
 
 import { useProductsContext } from "../../Context/products_context";
 
+import { OpacityOneWhenVisible } from "../../Animations";
+
 const FeaturedProducts = () => {
   // *** Get Products ***
   const {
@@ -22,10 +24,13 @@ const FeaturedProducts = () => {
   }
   return (
     <FeaturedProductsContainer>
-      <div className="fp-titleContainer">
-        <h3>Featured Products</h3>
-        <h1>Lifestyle</h1>
-      </div>
+      <OpacityOneWhenVisible>
+        <div className="fp-titleContainer">
+          <h3>Featured Products</h3>
+          <h1>Lifestyle</h1>
+        </div>
+      </OpacityOneWhenVisible>
+
       <div className="section-center featured">
         {featuredProds.map((featured) => {
           return <ProductCard key={featured.id} {...featured}></ProductCard>;

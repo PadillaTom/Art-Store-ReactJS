@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import homeBg3 from "../../Assets/homeBg3.jpg";
+import { transitions, varsHomeText } from "../../Animations/animations";
 
 const Hero = () => {
   return (
@@ -11,13 +13,19 @@ const Hero = () => {
         <div className="bgimage-overlay"></div>
         <img src={homeBg3} alt="Art and Store" className="bgimage"></img>
       </div>
-      <div className="hero-info-container">
+      <motion.div
+        className="hero-info-container"
+        initial="from"
+        animate="to"
+        variants={varsHomeText}
+        transition={transitions.homeText}
+      >
         <h2>Art & Store</h2>
         <h1>Transform your spaces</h1>
         <Link to="/products" className="btn-fill">
           Explore
         </Link>
-      </div>
+      </motion.div>
     </HeroContainer>
   );
 };
