@@ -3,8 +3,10 @@
 ## Technologies:
 
 React\
+Axios\
 Context API(with useReducer)\
 Styled Components\
-Axios\
+Framer-Motion\
+React-Intersection-Observer\
 Auth0\
 Stripe
