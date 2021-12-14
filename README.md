@@ -1,4 +1,6 @@
-# PetiteStore - React JS
+# Art&Store - React JS
+
+https://artandstore.netlify.app
 
 ## Technologies:
 
